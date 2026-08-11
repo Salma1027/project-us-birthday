@@ -18,16 +18,21 @@
             background: #080808;
             color: white;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
         }
 
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
         .container {
+            width: 100%;
+            max-width: 750px;
             text-align: center;
-            max-width: 700px;
-            padding: 40px;
         }
 
         .classified {
@@ -59,7 +64,7 @@
 
         .details p {
             margin: 12px 0;
-            color: #bbb;
+            color: #777;
         }
 
         .details span {
@@ -87,44 +92,322 @@
             margin-top: 30px;
             font-size: 24px;
         }
+
+        /* ANALYSIS SCREEN */
+
+        #analysisScreen {
+            display: none;
+        }
+
+        .analysis-box {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #333;
+            padding: 40px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .analysis-title {
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        #analysisText {
+            font-size: 22px;
+            min-height: 35px;
+            margin-bottom: 30px;
+        }
+
+        .loader {
+            width: 100%;
+            height: 2px;
+            background: #222;
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            width: 0%;
+            height: 100%;
+            background: white;
+            transition: width 1s ease;
+        }
+
+        /* DASHBOARD */
+
+        #dashboard {
+            display: none;
+            overflow-y: auto;
+            height: 100vh;
+            padding: 60px 30px;
+        }
+
+        .dashboard-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .dashboard-header {
+            margin-bottom: 40px;
+        }
+
+        .dashboard-header h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-header p {
+            color: #888;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #333;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .card-title {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .card-value {
+            font-size: 35px;
+        }
+
+        .love {
+            color: #ff4f81;
+        }
+
+        @media (max-width: 650px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- OPENING SCREEN -->
 
-        <div class="classified">
-            CONFIDENTIAL • PERSONAL ANALYSIS
+    <section class="screen" id="openingScreen">
+
+        <div class="container">
+
+            <div class="classified">
+                CONFIDENTIAL • PERSONAL ANALYSIS
+            </div>
+
+            <h1>PROJECT: US</h1>
+
+            <div class="subtitle">
+                Relationship Intelligence Dashboard
+            </div>
+
+            <div class="details">
+
+                <p>ANALYST:
+                    <span>Salma</span>
+                </p>
+
+                <p>SUBJECT:
+                    <span>My Favorite Person</span>
+                </p>
+
+                <p>PROJECT STATUS:
+                    <span>Successfully Completed ❤️</span>
+                </p>
+
+                <p>CLASSIFICATION:
+                    <span>Extremely Important</span>
+                </p>
+
+            </div>
+
+            <button onclick="startAnalysis()">
+                INITIALIZE ANALYSIS →
+            </button>
+
+            <div class="heart">
+                ❤️
+            </div>
+
         </div>
 
-        <h1>PROJECT: US</h1>
+    </section>
 
-        <div class="subtitle">
-            Relationship Intelligence Dashboard
+
+    <!-- ANALYSIS SCREEN -->
+
+    <section class="screen" id="analysisScreen">
+
+        <div class="analysis-box">
+
+            <div class="analysis-title">
+                RUNNING RELATIONSHIP ANALYSIS
+            </div>
+
+            <div id="analysisText">
+                Initializing...
+            </div>
+
+            <div class="loader">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+
         </div>
 
-        <div class="details">
-            <p>ANALYST: <span>Salma</span></p>
-            <p>SUBJECT: <span>My Favorite Person</span></p>
-            <p>PROJECT STATUS: <span>Successfully Completed ❤️</span></p>
-            <p>CLASSIFICATION: <span>Extremely Important</span></p>
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+        <div class="dashboard-container">
+
+            <div class="dashboard-header">
+
+                <h2>Executive Summary</h2>
+
+                <p>
+                    Relationship Intelligence Report • Birthday Edition
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-title">
+                        HAPPINESS IMPACT
+                    </div>
+
+                    <div class="card-value love">
+                        +∞%
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        MEMORIES CREATED
+                    </div>
+
+                    <div class="card-value">
+                        ∞
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        DISTANCE BETWEEN HEARTS
+                    </div>
+
+                    <div class="card-value">
+                        0 km
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        PROBABILITY OF CHOOSING YOU AGAIN
+                    </div>
+
+                    <div class="card-value love">
+                        100%
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <button onclick="startAnalysis()">
-            INITIALIZE ANALYSIS →
-        </button>
+    </section>
 
-        <div class="heart">
-            ❤️
-        </div>
-
-    </div>
 
     <script>
+
         function startAnalysis() {
-            alert("Analysis initialized ❤️");
+
+            document.getElementById("openingScreen").style.display = "none";
+
+            document.getElementById("analysisScreen").style.display = "flex";
+
+            const messages = [
+
+                "Authenticating subject...",
+                "Loading memories...",
+                "Analyzing conversations...",
+                "Calculating happiness impact...",
+                "Evaluating long-distance resilience...",
+                "Running emotional intelligence model...",
+                "Finalizing results..."
+
+            ];
+
+            let index = 0;
+
+            const text = document.getElementById("analysisText");
+
+            const bar = document.getElementById("loaderBar");
+
+            function nextStep() {
+
+                if (index < messages.length) {
+
+                    text.innerText = messages[index];
+
+                    bar.style.width =
+                        ((index + 1) / messages.length * 100) + "%";
+
+                    index++;
+
+                    setTimeout(nextStep, 900);
+
+                } else {
+
+                    setTimeout(function() {
+
+                        document.getElementById("analysisScreen").style.display = "none";
+
+                        document.getElementById("dashboard").style.display = "block";
+
+                    }, 800);
+
+                }
+
+            }
+
+            nextStep();
+
         }
+
     </script>
 
 </body>
