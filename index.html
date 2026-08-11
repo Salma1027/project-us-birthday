@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project: Us ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 40px;
+        }
+
+        .classified {
+            color: #888;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 64px;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        .details {
+            border: 1px solid #333;
+            padding: 25px;
+            margin-bottom: 35px;
+            text-align: left;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .details p {
+            margin: 12px 0;
+            color: #bbb;
+        }
+
+        .details span {
+            color: white;
+        }
+
+        button {
+            background: white;
+            color: black;
+            border: none;
+            padding: 16px 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #ff4f81;
+            color: white;
+        }
+
+        .heart {
+            margin-top: 30px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="classified">
+            CONFIDENTIAL • PERSONAL ANALYSIS
+        </div>
+
+        <h1>PROJECT: US</h1>
+
+        <div class="subtitle">
+            Relationship Intelligence Dashboard
+        </div>
+
+        <div class="details">
+            <p>ANALYST: <span>Salma</span></p>
+            <p>SUBJECT: <span>My Favorite Person</span></p>
+            <p>PROJECT STATUS: <span>Successfully Completed ❤️</span></p>
+            <p>CLASSIFICATION: <span>Extremely Important</span></p>
+        </div>
+
+        <button onclick="startAnalysis()">
+            INITIALIZE ANALYSIS →
+        </button>
+
+        <div class="heart">
+            ❤️
+        </div>
+
+    </div>
+
+    <script>
+        function startAnalysis() {
+            alert("Analysis initialized ❤️");
+        }
+    </script>
+
+</body>
+</html>
