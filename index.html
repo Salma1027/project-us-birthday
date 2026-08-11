@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,10 @@
             color: white;
             font-family: Arial, sans-serif;
         }
+
+        /* =========================
+           OPENING
+        ========================= */
 
         .screen {
             min-height: 100vh;
@@ -97,7 +102,10 @@
             font-size: 24px;
         }
 
-        /* ANALYSIS */
+
+        /* =========================
+           ANALYSIS
+        ========================= */
 
         #analysisScreen {
             display: none;
@@ -135,10 +143,13 @@
             width: 0%;
             height: 100%;
             background: white;
-            transition: width 1s ease;
+            transition: width 0.8s ease;
         }
 
-        /* DASHBOARD */
+
+        /* =========================
+           DASHBOARD
+        ========================= */
 
         #dashboard {
             display: none;
@@ -164,7 +175,7 @@
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 90px;
         }
 
         .section-title {
@@ -173,6 +184,11 @@
             letter-spacing: 3px;
             margin-bottom: 25px;
         }
+
+
+        /* =========================
+           KPI CARDS
+        ========================= */
 
         .cards {
             display: grid;
@@ -201,7 +217,10 @@
             color: #ff4f81;
         }
 
-        /* LONG DISTANCE */
+
+        /* =========================
+           LONG DISTANCE
+        ========================= */
 
         .distance-box {
             border: 1px solid #333;
@@ -232,7 +251,103 @@
             line-height: 1.8;
         }
 
-        /* ROOT CAUSE */
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline {
+            border-left: 1px solid #444;
+            margin-left: 10px;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff4f81;
+            border-radius: 50%;
+            left: -36px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            color: #ff4f81;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MEMORY PHOTOS
+        ========================= */
+
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .memory-card {
+            border: 1px solid #333;
+            background: rgba(255,255,255,0.03);
+            overflow: hidden;
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .memory-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .memory-caption {
+            padding: 25px;
+        }
+
+        .memory-number {
+            color: #ff4f81;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .memory-caption h3 {
+            margin-bottom: 10px;
+        }
+
+        .memory-caption p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           ROOT CAUSE
+        ========================= */
 
         .reason {
             border-left: 2px solid #ff4f81;
@@ -246,7 +361,10 @@
             color: white;
         }
 
-        /* FINAL */
+
+        /* =========================
+           FINAL
+        ========================= */
 
         .final {
             text-align: center;
@@ -271,6 +389,11 @@
             margin-top: 40px;
         }
 
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 650px) {
 
             h1 {
@@ -278,6 +401,10 @@
             }
 
             .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .memories {
                 grid-template-columns: 1fr;
             }
 
@@ -289,16 +416,22 @@
                 font-size: 30px;
             }
 
+            .memory-card img {
+                height: 350px;
+            }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-<!-- OPENING SCREEN -->
+<!-- ==================================================
+     OPENING SCREEN
+================================================== -->
 
 <section class="screen" id="openingScreen">
 
@@ -308,7 +441,9 @@
             CONFIDENTIAL • PERSONAL ANALYSIS
         </div>
 
-        <h1>PROJECT: US</h1>
+        <h1>
+            PROJECT: US
+        </h1>
 
         <div class="subtitle">
             Relationship Intelligence Dashboard
@@ -329,6 +464,11 @@
             <p>
                 PROJECT START:
                 <span>July 21, 2025</span>
+            </p>
+
+            <p>
+                LAST IN-PERSON MEETING:
+                <span>January 5, 2026</span>
             </p>
 
             <p>
@@ -357,7 +497,9 @@
 
 
 
-<!-- ANALYSIS SCREEN -->
+<!-- ==================================================
+     ANALYSIS SCREEN
+================================================== -->
 
 <section class="screen" id="analysisScreen">
 
@@ -386,7 +528,9 @@
 
 
 
-<!-- DASHBOARD -->
+<!-- ==================================================
+     MAIN DASHBOARD
+================================================== -->
 
 <section id="dashboard">
 
@@ -409,7 +553,9 @@
 
 
 
-        <!-- KPIs -->
+        <!-- ==================================================
+             KPI SECTION
+        ================================================== -->
 
         <div class="section">
 
@@ -497,14 +643,15 @@
 
                 </div>
 
-
             </div>
 
         </div>
 
 
 
-        <!-- LONG DISTANCE -->
+        <!-- ==================================================
+             LONG DISTANCE
+        ================================================== -->
 
         <div class="section">
 
@@ -533,7 +680,6 @@
                 <div class="countries">
                     🇺🇸 USA
                 </div>
-
 
                 <div class="finding">
 
@@ -570,7 +716,219 @@
 
 
 
-        <!-- ROOT CAUSE -->
+        <!-- ==================================================
+             TIMELINE
+        ================================================== -->
+
+        <div class="section">
+
+            <div class="section-title">
+                PROJECT TIMELINE
+            </div>
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        21 JULY 2025
+                    </div>
+
+                    <div class="timeline-title">
+                        PROJECT INITIATED ❤️
+                    </div>
+
+                    <div class="timeline-text">
+
+                        The day our story officially began.
+
+                        <br><br>
+
+                        Two people.
+                        One decision.
+
+                        <br>
+
+                        And a project neither of us knew
+                        would become this important.
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        05 JANUARY 2026
+                    </div>
+
+                    <div class="timeline-title">
+                        THE DISTANCE PHASE
+                    </div>
+
+                    <div class="timeline-text">
+
+                        The last time we were together
+                        before the distance became part
+                        of our story.
+
+                        <br><br>
+
+                        India and the USA became
+                        separated by thousands of kilometres.
+
+                        <br><br>
+
+                        But the project continued.
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        TODAY
+                    </div>
+
+                    <div class="timeline-title">
+                        PROJECT STATUS: STILL ACTIVE ❤️
+                    </div>
+
+                    <div class="timeline-text">
+
+                        Different country.
+
+                        <br>
+
+                        Different time zone.
+
+                        <br>
+
+                        Still the same person.
+
+                        <br>
+
+                        Still us.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             MEMORY ARCHIVE
+        ================================================== -->
+
+        <div class="section">
+
+            <div class="section-title">
+                MEMORY ARCHIVE
+            </div>
+
+            <div class="memories">
+
+
+                <!-- PHOTO 1 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="./photos/memory1.jpg"
+                        alt="Memory one"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-number">
+                            MEMORY 01
+                        </div>
+
+                        <h3>
+                            Where It Started
+                        </h3>
+
+                        <p>
+
+                            One photograph.
+
+                            <br>
+
+                            One moment.
+
+                            <br>
+
+                            And the beginning of something
+                            that became much bigger than either
+                            of us expected.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHOTO 2 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="./photos/memory2.jpeg"
+                        alt="Memory two"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-number">
+                            MEMORY 02
+                        </div>
+
+                        <h3>
+                            Before The Distance
+                        </h3>
+
+                        <p>
+
+                            January 5, 2026.
+
+                            <br>
+
+                            The distance eventually became real.
+
+                            <br>
+
+                            But so did everything we built
+                            before it.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             ROOT CAUSE ANALYSIS
+        ================================================== -->
 
         <div class="section">
 
@@ -618,10 +976,11 @@
                 When something or someone hurts me,
                 you don't simply forget it.
 
-                <br>
+                <br><br>
 
                 You remember what happened
-                because you care about what happens to me.
+                because you care about what happens
+                to me.
 
             </div>
 
@@ -657,7 +1016,7 @@
                     RESULT: INCONCLUSIVE.
                 </span>
 
-                <br>
+                <br><br>
 
                 There are simply too many reasons.
 
@@ -667,7 +1026,9 @@
 
 
 
-        <!-- FINAL -->
+        <!-- ==================================================
+             FINAL
+        ================================================== -->
 
         <div class="final">
 
@@ -727,6 +1088,10 @@
 
 
 
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
 
 function startAnalysis() {
@@ -744,6 +1109,8 @@ function startAnalysis() {
         "Evaluating long-distance resilience...",
         "Analyzing care patterns...",
         "Evaluating protective behavior...",
+        "Analyzing relationship history...",
+        "Loading memory archive...",
         "Running emotional intelligence model...",
         "Finalizing results..."
 
@@ -762,21 +1129,18 @@ function startAnalysis() {
 
         if (index < messages.length) {
 
-            text.innerText =
-                messages[index];
+            text.innerText = messages[index];
 
             bar.style.width =
-                ((index + 1) /
-                messages.length * 100) + "%";
+                ((index + 1) / messages.length * 100) + "%";
 
             index++;
 
-            setTimeout(
-                nextStep,
-                900
-            );
+            setTimeout(nextStep, 800);
 
-        } else {
+        }
+
+        else {
 
             setTimeout(function() {
 
@@ -784,22 +1148,18 @@ function startAnalysis() {
                     "analysisScreen"
                 ).style.display = "none";
 
-
                 document.getElementById(
                     "dashboard"
                 ).style.display = "block";
 
-
-                window.scrollTo(
-                    0,
-                    0
-                );
+                window.scrollTo(0, 0);
 
             }, 800);
 
         }
 
     }
+
 
     nextStep();
 
@@ -809,4 +1169,5 @@ function startAnalysis() {
 
 
 </body>
+
 </html>
