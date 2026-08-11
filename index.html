@@ -7,10 +7,15 @@
     <title>Project: Us ❤️</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -18,7 +23,6 @@
             background: #080808;
             color: white;
             font-family: Arial, sans-serif;
-            overflow: hidden;
         }
 
         .screen {
@@ -93,7 +97,7 @@
             font-size: 24px;
         }
 
-        /* ANALYSIS SCREEN */
+        /* ANALYSIS */
 
         #analysisScreen {
             display: none;
@@ -138,9 +142,7 @@
 
         #dashboard {
             display: none;
-            overflow-y: auto;
-            height: 100vh;
-            padding: 60px 30px;
+            padding: 70px 25px;
         }
 
         .dashboard-container {
@@ -149,16 +151,27 @@
         }
 
         .dashboard-header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .dashboard-header h2 {
-            font-size: 40px;
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
         .dashboard-header p {
             color: #888;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
         }
 
         .cards {
@@ -188,7 +201,78 @@
             color: #ff4f81;
         }
 
+        /* LONG DISTANCE */
+
+        .distance-box {
+            border: 1px solid #333;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .countries {
+            font-size: 28px;
+            margin: 25px 0;
+        }
+
+        .distance-line {
+            color: #666;
+            letter-spacing: 4px;
+            margin: 15px 0;
+        }
+
+        .distance-number {
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        .finding {
+            margin-top: 30px;
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        /* ROOT CAUSE */
+
+        .reason {
+            border-left: 2px solid #ff4f81;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.03);
+            line-height: 1.7;
+        }
+
+        .reason strong {
+            color: white;
+        }
+
+        /* FINAL */
+
+        .final {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .final h2 {
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+
+        .final p {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 2;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .final-heart {
+            font-size: 55px;
+            margin-top: 40px;
+        }
+
         @media (max-width: 650px) {
+
             h1 {
                 font-size: 40px;
             }
@@ -196,102 +280,145 @@
             .cards {
                 grid-template-columns: 1fr;
             }
+
+            .dashboard-header h2 {
+                font-size: 32px;
+            }
+
+            .distance-number {
+                font-size: 30px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- OPENING SCREEN -->
 
-    <section class="screen" id="openingScreen">
+<!-- OPENING SCREEN -->
 
-        <div class="container">
+<section class="screen" id="openingScreen">
 
-            <div class="classified">
-                CONFIDENTIAL • PERSONAL ANALYSIS
-            </div>
+    <div class="container">
 
-            <h1>PROJECT: US</h1>
+        <div class="classified">
+            CONFIDENTIAL • PERSONAL ANALYSIS
+        </div>
 
-            <div class="subtitle">
-                Relationship Intelligence Dashboard
-            </div>
+        <h1>PROJECT: US</h1>
 
-            <div class="details">
+        <div class="subtitle">
+            Relationship Intelligence Dashboard
+        </div>
 
-                <p>ANALYST:
-                    <span>Salma</span>
-                </p>
+        <div class="details">
 
-                <p>SUBJECT:
-                    <span>My Favorite Person</span>
-                </p>
+            <p>
+                ANALYST:
+                <span>Salma</span>
+            </p>
 
-                <p>PROJECT STATUS:
-                    <span>Successfully Completed ❤️</span>
-                </p>
+            <p>
+                SUBJECT:
+                <span>Akhil Oliver</span>
+            </p>
 
-                <p>CLASSIFICATION:
-                    <span>Extremely Important</span>
-                </p>
+            <p>
+                PROJECT START:
+                <span>July 21, 2025</span>
+            </p>
 
-            </div>
+            <p>
+                PROJECT STATUS:
+                <span>Successfully Completed ❤️</span>
+            </p>
 
-            <button onclick="startAnalysis()">
-                INITIALIZE ANALYSIS →
-            </button>
+            <p>
+                CLASSIFICATION:
+                <span>Extremely Important</span>
+            </p>
 
-            <div class="heart">
-                ❤️
+        </div>
+
+        <button onclick="startAnalysis()">
+            INITIALIZE ANALYSIS →
+        </button>
+
+        <div class="heart">
+            ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ANALYSIS SCREEN -->
+
+<section class="screen" id="analysisScreen">
+
+    <div class="analysis-box">
+
+        <div class="analysis-title">
+            RUNNING RELATIONSHIP ANALYSIS
+        </div>
+
+        <div id="analysisText">
+            Initializing...
+        </div>
+
+        <div class="loader">
+
+            <div
+                class="loader-bar"
+                id="loaderBar">
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ANALYSIS SCREEN -->
 
-    <section class="screen" id="analysisScreen">
+<!-- DASHBOARD -->
 
-        <div class="analysis-box">
+<section id="dashboard">
 
-            <div class="analysis-title">
-                RUNNING RELATIONSHIP ANALYSIS
-            </div>
+    <div class="dashboard-container">
 
-            <div id="analysisText">
-                Initializing...
-            </div>
 
-            <div class="loader">
-                <div class="loader-bar" id="loaderBar"></div>
-            </div>
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <h2>
+                Executive Summary
+            </h2>
+
+            <p>
+                Relationship Intelligence Report • Birthday Edition
+            </p>
 
         </div>
 
-    </section>
 
 
-    <!-- DASHBOARD -->
+        <!-- KPIs -->
 
-    <section id="dashboard">
+        <div class="section">
 
-        <div class="dashboard-container">
-
-            <div class="dashboard-header">
-
-                <h2>Executive Summary</h2>
-
-                <p>
-                    Relationship Intelligence Report • Birthday Edition
-                </p>
-
+            <div class="section-title">
+                KEY PERFORMANCE INDICATORS
             </div>
-
 
             <div class="cards">
+
 
                 <div class="card">
 
@@ -322,11 +449,24 @@
                 <div class="card">
 
                     <div class="card-title">
-                        DISTANCE BETWEEN HEARTS
+                        PHYSICAL DISTANCE
                     </div>
 
                     <div class="card-value">
-                        0 km
+                        ~13,000 km
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        EMOTIONAL DISTANCE
+                    </div>
+
+                    <div class="card-value love">
+                        0 km ❤️
                     </div>
 
                 </div>
@@ -344,71 +484,329 @@
 
                 </div>
 
+
+                <div class="card">
+
+                    <div class="card-title">
+                        PROJECT STARTED
+                    </div>
+
+                    <div class="card-value">
+                        21.07.2025
+                    </div>
+
+                </div>
+
+
             </div>
 
         </div>
 
-    </section>
 
 
-    <script>
+        <!-- LONG DISTANCE -->
 
-        function startAnalysis() {
+        <div class="section">
 
-            document.getElementById("openingScreen").style.display = "none";
+            <div class="section-title">
+                LONG-DISTANCE ANALYSIS
+            </div>
 
-            document.getElementById("analysisScreen").style.display = "flex";
+            <div class="distance-box">
 
-            const messages = [
+                <div class="countries">
+                    🇮🇳 INDIA
+                </div>
 
-                "Authenticating subject...",
-                "Loading memories...",
-                "Analyzing conversations...",
-                "Calculating happiness impact...",
-                "Evaluating long-distance resilience...",
-                "Running emotional intelligence model...",
-                "Finalizing results..."
+                <div class="distance-line">
+                    ─────────────────────
+                </div>
 
-            ];
+                <div class="distance-number">
+                    ~13,000 KM
+                </div>
 
-            let index = 0;
+                <div class="distance-line">
+                    ─────────────────────
+                </div>
 
-            const text = document.getElementById("analysisText");
+                <div class="countries">
+                    🇺🇸 USA
+                </div>
 
-            const bar = document.getElementById("loaderBar");
 
-            function nextStep() {
+                <div class="finding">
 
-                if (index < messages.length) {
+                    <strong>
+                        ANALYTICAL FINDING
+                    </strong>
 
-                    text.innerText = messages[index];
+                    <br><br>
 
-                    bar.style.width =
-                        ((index + 1) / messages.length * 100) + "%";
+                    The geographical distance is real.
 
-                    index++;
+                    <br>
 
-                    setTimeout(nextStep, 900);
+                    Different countries.
+                    Different schedules.
+                    Different time zones.
 
-                } else {
+                    <br><br>
 
-                    setTimeout(function() {
+                    But the model detected something
+                    the distance could not measure:
 
-                        document.getElementById("analysisScreen").style.display = "none";
+                    <br><br>
 
-                        document.getElementById("dashboard").style.display = "block";
+                    <span class="love">
+                        CONNECTION STATUS: ACTIVE ❤️
+                    </span>
 
-                    }, 800);
+                </div>
 
-                }
+            </div>
 
-            }
+        </div>
 
-            nextStep();
+
+
+        <!-- ROOT CAUSE -->
+
+        <div class="section">
+
+            <div class="section-title">
+                ROOT CAUSE ANALYSIS
+            </div>
+
+
+            <div class="reason">
+
+                <strong>
+                    01 • CARE
+                </strong>
+
+                <br>
+
+                You remember the things I want,
+                even when I don't have to remind you.
+
+            </div>
+
+
+            <div class="reason">
+
+                <strong>
+                    02 • SUPPORT
+                </strong>
+
+                <br>
+
+                You support me and stand beside me,
+                even when life gets difficult.
+
+            </div>
+
+
+            <div class="reason">
+
+                <strong>
+                    03 • PROTECTION
+                </strong>
+
+                <br>
+
+                When something or someone hurts me,
+                you don't simply forget it.
+
+                <br>
+
+                You remember what happened
+                because you care about what happens to me.
+
+            </div>
+
+
+            <div class="reason">
+
+                <strong>
+                    04 • ATTENTION TO DETAIL
+                </strong>
+
+                <br>
+
+                Somehow, you remember the little things
+                that matter to me.
+
+            </div>
+
+
+            <div class="reason">
+
+                <strong>
+                    05 • YOU
+                </strong>
+
+                <br>
+
+                The model attempted to identify
+                a single root cause.
+
+                <br><br>
+
+                <span class="love">
+                    RESULT: INCONCLUSIVE.
+                </span>
+
+                <br>
+
+                There are simply too many reasons.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FINAL -->
+
+        <div class="final">
+
+            <div class="section-title">
+                FINAL ANALYSIS
+            </div>
+
+            <h2>
+                ANALYSIS COMPLETE.
+            </h2>
+
+            <p>
+
+                After reviewing all available data,
+                the model reached one conclusion.
+
+                <br><br>
+
+                Distance may separate
+                two people geographically.
+
+                <br>
+
+                It doesn't necessarily separate
+                two people emotionally.
+
+                <br><br>
+
+                And if I had to choose again...
+
+                <br><br>
+
+                I would still choose you.
+
+                <br><br>
+
+                Every single time.
+
+            </p>
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <br><br>
+
+            <h3>
+                Happy Birthday, Akhil.
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+function startAnalysis() {
+
+    document.getElementById("openingScreen").style.display = "none";
+
+    document.getElementById("analysisScreen").style.display = "flex";
+
+    const messages = [
+
+        "Authenticating subject...",
+        "Loading memories...",
+        "Analyzing conversations...",
+        "Calculating happiness impact...",
+        "Evaluating long-distance resilience...",
+        "Analyzing care patterns...",
+        "Evaluating protective behavior...",
+        "Running emotional intelligence model...",
+        "Finalizing results..."
+
+    ];
+
+    let index = 0;
+
+    const text =
+        document.getElementById("analysisText");
+
+    const bar =
+        document.getElementById("loaderBar");
+
+
+    function nextStep() {
+
+        if (index < messages.length) {
+
+            text.innerText =
+                messages[index];
+
+            bar.style.width =
+                ((index + 1) /
+                messages.length * 100) + "%";
+
+            index++;
+
+            setTimeout(
+                nextStep,
+                900
+            );
+
+        } else {
+
+            setTimeout(function() {
+
+                document.getElementById(
+                    "analysisScreen"
+                ).style.display = "none";
+
+
+                document.getElementById(
+                    "dashboard"
+                ).style.display = "block";
+
+
+                window.scrollTo(
+                    0,
+                    0
+                );
+
+            }, 800);
 
         }
 
-    </script>
+    }
+
+    nextStep();
+
+}
+
+</script>
+
 
 </body>
 </html>
