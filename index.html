@@ -21,17 +21,11 @@ html {
 }
 
 body {
-    min-height: 100vh;
     background: #080808;
     color: white;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
 }
-
-
-/* =========================================
-   OPENING SCREEN
-========================================= */
 
 .screen {
     min-height: 100vh;
@@ -43,13 +37,13 @@ body {
 
 .container {
     width: 100%;
-    max-width: 750px;
+    max-width: 760px;
     text-align: center;
 }
 
 .classified {
-    color: #888;
-    font-size: 12px;
+    color: #777;
+    font-size: 11px;
     letter-spacing: 4px;
     margin-bottom: 25px;
 }
@@ -87,27 +81,27 @@ button {
     background: white;
     color: black;
     border: none;
-    padding: 16px 35px;
-    font-size: 14px;
+    padding: 16px 32px;
+    font-size: 13px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
     background: #ff4f81;
     color: white;
+    transform: scale(1.04);
 }
 
 .heart {
     margin-top: 30px;
-    font-size: 24px;
+    font-size: 25px;
 }
 
 
 /* =========================================
-   ANALYSIS SCREEN
+   ANALYSIS
 ========================================= */
 
 #analysisScreen {
@@ -123,14 +117,14 @@ button:hover {
 }
 
 .analysis-title {
-    font-size: 13px;
+    color: #777;
+    font-size: 12px;
     letter-spacing: 3px;
-    color: #888;
     margin-bottom: 30px;
 }
 
 #analysisText {
-    font-size: 22px;
+    font-size: 20px;
     min-height: 35px;
     margin-bottom: 30px;
 }
@@ -139,7 +133,6 @@ button:hover {
     width: 100%;
     height: 2px;
     background: #222;
-    overflow: hidden;
 }
 
 .loader-bar {
@@ -165,7 +158,7 @@ button:hover {
 }
 
 .dashboard-header {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .dashboard-header h2 {
@@ -174,7 +167,7 @@ button:hover {
 }
 
 .dashboard-header p {
-    color: #888;
+    color: #777;
 }
 
 .section {
@@ -183,14 +176,14 @@ button:hover {
 
 .section-title {
     color: #777;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     margin-bottom: 25px;
 }
 
 
 /* =========================================
-   KPI CARDS
+   KPI
 ========================================= */
 
 .cards {
@@ -213,13 +206,13 @@ button:hover {
 
 .card-title {
     color: #777;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
 .card-value {
-    font-size: 35px;
+    font-size: 34px;
 }
 
 .love {
@@ -228,7 +221,7 @@ button:hover {
 
 
 /* =========================================
-   LONG DISTANCE
+   DISTANCE
 ========================================= */
 
 .distance-box {
@@ -239,25 +232,22 @@ button:hover {
 }
 
 .countries {
-    font-size: 28px;
-    margin: 25px 0;
+    font-size: 27px;
+    margin: 20px 0;
 }
 
 .distance-line {
-    color: #666;
-    letter-spacing: 4px;
-    margin: 15px 0;
+    color: #555;
 }
 
 .distance-number {
-    font-size: 40px;
-    margin: 20px 0;
+    font-size: 38px;
+    margin: 15px 0;
 }
 
 .finding {
     margin-top: 30px;
     color: #aaa;
-    line-height: 1.8;
 }
 
 
@@ -272,37 +262,36 @@ button:hover {
 }
 
 .timeline-item {
-    margin-bottom: 50px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     background: #ff4f81;
     border-radius: 50%;
     left: -36px;
-    top: 5px;
-    box-shadow: 0 0 15px rgba(255,79,129,0.6);
+    top: 7px;
+    box-shadow: 0 0 12px rgba(255,79,129,0.6);
 }
 
 .timeline-date {
     color: #ff4f81;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .timeline-title {
-    font-size: 24px;
+    font-size: 23px;
     margin-bottom: 10px;
 }
 
 .timeline-text {
     color: #aaa;
-    line-height: 1.8;
 }
 
 
@@ -320,12 +309,12 @@ button:hover {
     border: 1px solid #333;
     background: rgba(255,255,255,0.03);
     overflow: hidden;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .memory-card:hover {
     border-color: #ff4f81;
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .memory-card img {
@@ -333,11 +322,6 @@ button:hover {
     height: 420px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-}
-
-.memory-card:hover img {
-    transform: scale(1.04);
 }
 
 .memory-caption {
@@ -346,7 +330,7 @@ button:hover {
 
 .memory-number {
     color: #ff4f81;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
@@ -357,12 +341,11 @@ button:hover {
 
 .memory-caption p {
     color: #999;
-    line-height: 1.6;
 }
 
 
 /* =========================================
-   ROOT CAUSE ANALYSIS
+   ROOT CAUSE
 ========================================= */
 
 .reason {
@@ -370,7 +353,6 @@ button:hover {
     padding: 20px 25px;
     margin-bottom: 15px;
     background: rgba(255,255,255,0.03);
-    line-height: 1.7;
 }
 
 .reason strong {
@@ -379,24 +361,24 @@ button:hover {
 
 
 /* =========================================
-   CONFIDENTIAL BIRTHDAY FILE
+   CONFIDENTIAL FILE
 ========================================= */
 
 .confidential-file {
     border: 1px solid #333;
-    padding: 45px 35px;
+    padding: 45px 30px;
     text-align: center;
     background: rgba(255,255,255,0.03);
 }
 
 .file-lock {
     font-size: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .file-status {
     color: #777;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3px;
     margin-bottom: 15px;
 }
@@ -408,7 +390,6 @@ button:hover {
 
 .file-info {
     color: #888;
-    line-height: 1.8;
     margin-bottom: 30px;
 }
 
@@ -418,11 +399,6 @@ button:hover {
     border: 1px solid #555;
 }
 
-.open-file-button:hover {
-    background: #ff4f81;
-    border-color: #ff4f81;
-}
-
 .file-loader {
     display: none;
     margin-top: 30px;
@@ -430,13 +406,12 @@ button:hover {
 
 .file-loader-text {
     color: #888;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
 .file-progress {
-    width: 100%;
     max-width: 400px;
     height: 2px;
     background: #222;
@@ -450,12 +425,17 @@ button:hover {
     transition: width 0.15s linear;
 }
 
+
+/* =========================================
+   LETTER
+========================================= */
+
 .birthday-letter {
     display: none;
     margin-top: 45px;
-    text-align: left;
-    border-top: 1px solid #333;
     padding-top: 40px;
+    border-top: 1px solid #333;
+    text-align: left;
 }
 
 .letter-header {
@@ -470,7 +450,7 @@ button:hover {
 
 .letter-header p {
     color: #777;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3px;
 }
 
@@ -486,12 +466,12 @@ button:hover {
     margin-bottom: 25px;
 }
 
-.letter-body .highlight {
-    color: white;
+.highlight {
+    color: white !important;
 }
 
-.letter-body .pink {
-    color: #ff4f81;
+.pink {
+    color: #ff4f81 !important;
 }
 
 .letter-signature {
@@ -502,7 +482,7 @@ button:hover {
 
 
 /* =========================================
-   FINAL
+   FINAL REVEAL
 ========================================= */
 
 .final {
@@ -511,21 +491,21 @@ button:hover {
 }
 
 .final h2 {
-    font-size: 45px;
+    font-size: 44px;
     margin-bottom: 30px;
 }
 
 .final p {
+    max-width: 700px;
+    margin: auto;
     color: #aaa;
     font-size: 18px;
     line-height: 2;
-    max-width: 650px;
-    margin: auto;
 }
 
 .final-heart {
     font-size: 55px;
-    margin-top: 40px;
+    margin: 45px 0 25px;
     animation: heartbeat 1.5s infinite;
 }
 
@@ -539,6 +519,44 @@ button:hover {
         transform: scale(1.15);
     }
 
+}
+
+.final-stats {
+    max-width: 500px;
+    margin: 50px auto 0;
+    padding: 25px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: grid;
+    gap: 18px;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.final-stats strong {
+    color: white;
+    margin-left: 8px;
+}
+
+.project-status {
+    margin-top: 70px;
+    padding: 35px;
+    border: 1px solid #333;
+    background: rgba(255,255,255,0.03);
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.status-active {
+    color: #ff4f81;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.signature {
+    margin-top: 35px;
+    color: #777;
 }
 
 
@@ -600,7 +618,7 @@ button:hover {
 
 
 <!-- =========================================
-     OPENING SCREEN
+     OPENING
 ========================================= -->
 
 <section class="screen" id="openingScreen">
@@ -668,7 +686,7 @@ INITIALIZE ANALYSIS →
 
 
 <!-- =========================================
-     ANALYSIS SCREEN
+     ANALYSIS
 ========================================= -->
 
 <section class="screen" id="analysisScreen">
@@ -685,9 +703,7 @@ Initializing...
 
 <div class="loader">
 
-<div
-class="loader-bar"
-id="loaderBar">
+<div class="loader-bar" id="loaderBar">
 </div>
 
 </div>
@@ -707,8 +723,6 @@ id="loaderBar">
 <div class="dashboard-container">
 
 
-<!-- HEADER -->
-
 <div class="dashboard-header">
 
 <h2>
@@ -722,10 +736,7 @@ Relationship Intelligence Report • Birthday Edition
 </div>
 
 
-
-<!-- =========================================
-     KPI SECTION
-========================================= -->
+<!-- KPI -->
 
 <div class="section">
 
@@ -813,15 +824,14 @@ PROJECT STARTED
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- =========================================
-     LONG DISTANCE
-========================================= -->
+
+<!-- LONG DISTANCE -->
 
 <div class="section">
 
@@ -886,9 +896,7 @@ CONNECTION STATUS: ACTIVE ❤️
 
 
 
-<!-- =========================================
-     PROJECT TIMELINE
-========================================= -->
+<!-- TIMELINE -->
 
 <div class="section">
 
@@ -1089,7 +1097,7 @@ MEMORY ARCHIVE
 <div class="memory-card">
 
 <img
-src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.33.jpeg"
+src="photos/memory1.jpeg"
 alt="Our first memory"
 >
 
@@ -1127,7 +1135,7 @@ that distance cannot take away.
 <div class="memory-card">
 
 <img
-src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.35.jpeg"
+src="photos/memory2.jpeg"
 alt="Our second memory"
 >
 
@@ -1164,9 +1172,7 @@ A memory I will always keep.
 
 
 
-<!-- =========================================
-     ROOT CAUSE ANALYSIS
-========================================= -->
+<!-- ROOT CAUSE -->
 
 <div class="section">
 
@@ -1265,7 +1271,7 @@ There are simply too many reasons.
 
 
 <!-- =========================================
-     CONFIDENTIAL BIRTHDAY FILE
+     CONFIDENTIAL FILE
 ========================================= -->
 
 <div class="section">
@@ -1276,21 +1282,17 @@ CLASSIFIED DOCUMENT
 
 <div class="confidential-file">
 
-
 <div class="file-lock">
 🔐
 </div>
-
 
 <div class="file-status">
 CONFIDENTIAL FILE DETECTED
 </div>
 
-
 <div class="file-title">
 BIRTHDAY MESSAGE
 </div>
-
 
 <div class="file-info">
 
@@ -1309,7 +1311,6 @@ ACCESS:
 
 </div>
 
-
 <button
 class="open-file-button"
 onclick="openBirthdayFile()"
@@ -1320,20 +1321,14 @@ OPEN CONFIDENTIAL FILE →
 </button>
 
 
-<div
-class="file-loader"
-id="fileLoader"
->
+<div class="file-loader" id="fileLoader">
 
 <div
 class="file-loader-text"
 id="fileLoaderText"
 >
-
 AUTHENTICATING...
-
 </div>
-
 
 <div class="file-progress">
 
@@ -1348,15 +1343,12 @@ id="fileProgressBar"
 
 
 
-<!-- =========================================
-     BIRTHDAY LETTER
-========================================= -->
+<!-- LETTER -->
 
 <div
 class="birthday-letter"
 id="birthdayLetter"
 >
-
 
 <div class="letter-header">
 
@@ -1431,66 +1423,89 @@ I'm still here.
 
 
 <p>
+
 And I think that's one of the things
 I want you to know most —
+
 <span class="highlight">
 I'm not only here for the easy days.
 I'm here for you.
 </span>
+
 </p>
 
 
 <p>
+
 You are one of the most caring people
 I've ever known.
+
 </p>
 
 
 <p>
+
 You remember the things I want
 even when I don't ask again.
 You remember the little things I tell you.
 You support me.
 You care about what bothers me.
+
 </p>
 
 
 <p>
+
 And when someone or something hurts me,
 you don't just forget it.
 You remember because you care about
 what happens to me.
+
 </p>
 
 
 <p>
+
 Sometimes I don't even have to explain
 how I feel.
 Somehow, you already understand.
+
 </p>
 
 
 <p>
+
 And then there is our distance.
+
 </p>
 
 
 <p>
+
 I came back to India on
-<span class="pink">August 31, 2025</span>.
+<span class="pink">
+August 31, 2025
+</span>.
+
 </p>
 
 
 <p>
+
 Then you came to India in December,
 and for a little while,
 we had our time together again.
+
 </p>
 
 
 <p>
+
 And then came
-<span class="pink">January 4, 2026</span>.
+<span class="pink">
+January 4, 2026
+</span>.
+
 </p>
 
 
@@ -1669,57 +1684,126 @@ Every single time. ❤️
 
 
 <!-- =========================================
-     FINAL ANALYSIS
+     FINAL REVEAL
 ========================================= -->
 
 <div class="final">
 
 <div class="section-title">
-FINAL ANALYSIS
+FINAL SYSTEM MESSAGE
 </div>
 
 <h2>
-ANALYSIS COMPLETE.
+FINAL ANALYSIS COMPLETE.
 </h2>
+
 
 <p>
 
-After reviewing all available data,
-the model reached one conclusion.
-
-<br><br>
-
-Distance may separate
-two people geographically.
+After everything we've been through,
 
 <br>
 
-It doesn't necessarily separate
-two people emotionally.
+the distance, the waiting,
+the arguments,
+and all the moments we've somehow
+held onto...
 
 <br><br>
 
-And if I had to choose again...
+<strong>
+the result hasn't changed.
+</strong>
 
 <br><br>
 
+If I could go back to
+July 21, 2025,
+
+<br>
+
+knowing everything I know now...
+
+<br><br>
+
+<span class="love">
 I would still choose you.
+</span>
 
 <br><br>
 
-Every single time.
+And if I could skip across
+all 13,000 km
+just to be beside you right now,
+
+<br>
+
+I would.
+
+<br><br>
+
+Until I can hold you again,
+
+<br>
+
+I'll keep choosing you from here. ❤️
 
 </p>
+
 
 <div class="final-heart">
 ❤️
 </div>
 
-<br><br>
 
 <h3>
-Happy Birthday, Akhil.
+Happy Birthday, my baby.
 </h3>
+
+
+<div class="final-stats">
+
+<div>
+NEXT MEETING:
+<strong>TBD</strong>
+</div>
+
+<div>
+NEXT HUG:
+<strong>PENDING</strong>
+</div>
+
+<div>
+NEXT KISS:
+<strong>PENDING</strong>
+</div>
+
+<div>
+LOVE:
+<strong class="love">
+ACTIVE ❤️
+</strong>
+</div>
+
+</div>
+
+
+<div class="project-status">
+
+<div>
+PROJECT: US
+</div>
+
+<div class="status-active">
+STATUS: ONGOING ❤️
+</div>
+
+</div>
+
+
+<div class="signature">
+— Salma
+</div>
 
 </div>
 
@@ -1737,16 +1821,11 @@ Happy Birthday, Akhil.
 <script>
 
 
-/* =========================================
-   MAIN ANALYSIS
-========================================= */
-
 function startAnalysis() {
 
     document.getElementById(
         "openingScreen"
     ).style.display = "none";
-
 
     document.getElementById(
         "analysisScreen"
@@ -1782,12 +1861,10 @@ function startAnalysis() {
 
     let index = 0;
 
-
     const text =
         document.getElementById(
             "analysisText"
         );
-
 
     const bar =
         document.getElementById(
@@ -1802,24 +1879,19 @@ function startAnalysis() {
             text.innerText =
                 messages[index];
 
-
             bar.style.width =
                 ((index + 1) /
                 messages.length *
                 100) + "%";
 
-
             index++;
-
 
             setTimeout(
                 nextStep,
                 800
             );
 
-        }
-
-        else {
+        } else {
 
             setTimeout(
                 function() {
@@ -1828,11 +1900,9 @@ function startAnalysis() {
                         "analysisScreen"
                     ).style.display = "none";
 
-
                     document.getElementById(
                         "dashboard"
                     ).style.display = "block";
-
 
                     window.scrollTo(
                         0,
@@ -1847,43 +1917,33 @@ function startAnalysis() {
 
     }
 
-
     nextStep();
 
 }
 
 
 
-/* =========================================
-   CONFIDENTIAL BIRTHDAY FILE
-========================================= */
-
 function openBirthdayFile() {
-
 
     const button =
         document.querySelector(
             ".open-file-button"
         );
 
-
     const loader =
         document.getElementById(
             "fileLoader"
         );
-
 
     const loaderText =
         document.getElementById(
             "fileLoaderText"
         );
 
-
     const progress =
         document.getElementById(
             "fileProgressBar"
         );
-
 
     const letter =
         document.getElementById(
@@ -1891,12 +1951,9 @@ function openBirthdayFile() {
         );
 
 
-    button.style.display =
-        "none";
+    button.style.display = "none";
 
-
-    loader.style.display =
-        "block";
+    loader.style.display = "block";
 
 
     const messages = [
@@ -1919,54 +1976,38 @@ function openBirthdayFile() {
 
     function runLoader() {
 
-
         if (step < messages.length) {
-
 
             loaderText.innerText =
                 messages[step];
-
 
             progress.style.width =
                 ((step + 1) /
                 messages.length *
                 100) + "%";
 
-
             step++;
-
 
             setTimeout(
                 runLoader,
                 700
             );
 
-
-        }
-
-        else {
-
+        } else {
 
             setTimeout(
                 function() {
 
-
                     loader.style.display =
                         "none";
-
 
                     letter.style.display =
                         "block";
 
-
                     letter.scrollIntoView({
-
                         behavior: "smooth",
-
                         block: "start"
-
                     });
-
 
                 },
                 700
@@ -1976,11 +2017,9 @@ function openBirthdayFile() {
 
     }
 
-
     runLoader();
 
 }
-
 
 </script>
 
