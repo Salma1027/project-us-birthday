@@ -379,6 +379,129 @@ button:hover {
 
 
 /* =========================================
+   CONFIDENTIAL BIRTHDAY FILE
+========================================= */
+
+.confidential-file {
+    border: 1px solid #333;
+    padding: 45px 35px;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+}
+
+.file-lock {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.file-status {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.file-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.file-info {
+    color: #888;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.open-file-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+.open-file-button:hover {
+    background: #ff4f81;
+    border-color: #ff4f81;
+}
+
+.file-loader {
+    display: none;
+    margin-top: 30px;
+}
+
+.file-loader-text {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.file-progress {
+    width: 100%;
+    max-width: 400px;
+    height: 2px;
+    background: #222;
+    margin: auto;
+}
+
+.file-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #ff4f81;
+    transition: width 0.15s linear;
+}
+
+.birthday-letter {
+    display: none;
+    margin-top: 45px;
+    text-align: left;
+    border-top: 1px solid #333;
+    padding-top: 40px;
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.letter-header h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.letter-header p {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.letter-body {
+    max-width: 700px;
+    margin: auto;
+}
+
+.letter-body p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.letter-body .highlight {
+    color: white;
+}
+
+.letter-body .pink {
+    color: #ff4f81;
+}
+
+.letter-signature {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+
+/* =========================================
    FINAL
 ========================================= */
 
@@ -458,6 +581,14 @@ button:hover {
         font-size: 32px;
     }
 
+    .letter-header h2 {
+        font-size: 28px;
+    }
+
+    .letter-body p {
+        font-size: 16px;
+    }
+
 }
 
 </style>
@@ -469,7 +600,7 @@ button:hover {
 
 
 <!-- =========================================
-     OPENING
+     OPENING SCREEN
 ========================================= -->
 
 <section class="screen" id="openingScreen">
@@ -522,7 +653,6 @@ CLASSIFICATION:
 
 </div>
 
-
 <button onclick="startAnalysis()">
 INITIALIZE ANALYSIS →
 </button>
@@ -538,7 +668,7 @@ INITIALIZE ANALYSIS →
 
 
 <!-- =========================================
-     ANALYSIS
+     ANALYSIS SCREEN
 ========================================= -->
 
 <section class="screen" id="analysisScreen">
@@ -594,7 +724,7 @@ Relationship Intelligence Report • Birthday Edition
 
 
 <!-- =========================================
-     KPI
+     KPI SECTION
 ========================================= -->
 
 <div class="section">
@@ -757,7 +887,7 @@ CONNECTION STATUS: ACTIVE ❤️
 
 
 <!-- =========================================
-     REAL RELATIONSHIP TIMELINE
+     PROJECT TIMELINE
 ========================================= -->
 
 <div class="section">
@@ -768,8 +898,6 @@ PROJECT TIMELINE
 
 <div class="timeline">
 
-
-<!-- JULY -->
 
 <div class="timeline-item">
 
@@ -800,7 +928,6 @@ became something I never expected.
 </div>
 
 
-<!-- AUGUST -->
 
 <div class="timeline-item">
 
@@ -836,7 +963,6 @@ wasn't easy anymore.
 </div>
 
 
-<!-- DECEMBER -->
 
 <div class="timeline-item">
 
@@ -867,7 +993,6 @@ I would later wish I could hold onto forever.
 </div>
 
 
-<!-- JANUARY 4 -->
 
 <div class="timeline-item">
 
@@ -906,7 +1031,6 @@ And then the distance began.
 </div>
 
 
-<!-- TODAY -->
 
 <div class="timeline-item">
 
@@ -962,8 +1086,6 @@ MEMORY ARCHIVE
 <div class="memories">
 
 
-<!-- PHOTO 1 -->
-
 <div class="memory-card">
 
 <img
@@ -1001,7 +1123,6 @@ that distance cannot take away.
 </div>
 
 
-<!-- PHOTO 2 -->
 
 <div class="memory-card">
 
@@ -1144,6 +1265,410 @@ There are simply too many reasons.
 
 
 <!-- =========================================
+     CONFIDENTIAL BIRTHDAY FILE
+========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+CLASSIFIED DOCUMENT
+</div>
+
+<div class="confidential-file">
+
+
+<div class="file-lock">
+🔐
+</div>
+
+
+<div class="file-status">
+CONFIDENTIAL FILE DETECTED
+</div>
+
+
+<div class="file-title">
+BIRTHDAY MESSAGE
+</div>
+
+
+<div class="file-info">
+
+SUBJECT:
+<strong>Akhil Oliver</strong>
+
+<br>
+
+CLASSIFICATION:
+<strong>EXTREMELY PERSONAL</strong>
+
+<br>
+
+ACCESS:
+<strong>AUTHORIZED ❤️</strong>
+
+</div>
+
+
+<button
+class="open-file-button"
+onclick="openBirthdayFile()"
+>
+
+OPEN CONFIDENTIAL FILE →
+
+</button>
+
+
+<div
+class="file-loader"
+id="fileLoader"
+>
+
+<div
+class="file-loader-text"
+id="fileLoaderText"
+>
+
+AUTHENTICATING...
+
+</div>
+
+
+<div class="file-progress">
+
+<div
+class="file-progress-bar"
+id="fileProgressBar"
+></div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+     BIRTHDAY LETTER
+========================================= -->
+
+<div
+class="birthday-letter"
+id="birthdayLetter"
+>
+
+
+<div class="letter-header">
+
+<h2>
+Happy Birthday, Baby ❤️
+</h2>
+
+<p>
+PERSONAL MESSAGE • AUTHORIZED ACCESS
+</p>
+
+</div>
+
+
+<div class="letter-body">
+
+
+<p>
+Baby, happy birthday.
+I wish I was with you today.
+I miss you so much.
+</p>
+
+
+<p>
+When I wasn't even looking for love,
+you came into my life.
+And honestly, at that time,
+I was afraid to love again.
+</p>
+
+
+<p>
+I was scared to trust someone
+and let them get close to me.
+But somehow, you made me trust you.
+You made me feel safe, secure,
+and comfortable enough to be myself around you.
+</p>
+
+
+<p>
+I know how far you've come.
+I know the things you've been through
+and how you had to come from the bottom
+to where you are now,
+especially during the times when you felt
+like no one was there for you.
+</p>
+
+
+<p class="highlight">
+
+And I want you to know that
+I will always be there for you too.
+
+</p>
+
+
+<p>
+I know sometimes I fight with you,
+get annoyed with you,
+and become your little problem 😂.
+But even when I'm angry,
+my love for you doesn't disappear.
+</p>
+
+
+<p>
+I'm still here.
+</p>
+
+
+<p>
+And I think that's one of the things
+I want you to know most —
+<span class="highlight">
+I'm not only here for the easy days.
+I'm here for you.
+</span>
+</p>
+
+
+<p>
+You are one of the most caring people
+I've ever known.
+</p>
+
+
+<p>
+You remember the things I want
+even when I don't ask again.
+You remember the little things I tell you.
+You support me.
+You care about what bothers me.
+</p>
+
+
+<p>
+And when someone or something hurts me,
+you don't just forget it.
+You remember because you care about
+what happens to me.
+</p>
+
+
+<p>
+Sometimes I don't even have to explain
+how I feel.
+Somehow, you already understand.
+</p>
+
+
+<p>
+And then there is our distance.
+</p>
+
+
+<p>
+I came back to India on
+<span class="pink">August 31, 2025</span>.
+</p>
+
+
+<p>
+Then you came to India in December,
+and for a little while,
+we had our time together again.
+</p>
+
+
+<p>
+And then came
+<span class="pink">January 4, 2026</span>.
+</p>
+
+
+<p class="highlight">
+
+I didn't know that day would become
+so important.
+
+</p>
+
+
+<p class="highlight">
+
+It was the last day I saw you.
+
+</p>
+
+
+<p class="pink">
+
+The last day I touched you.
+
+</p>
+
+
+<p>
+
+I didn't know I was living
+a moment I would later miss this much.
+
+</p>
+
+
+<p>
+
+Now we're thousands of kilometres apart,
+in different countries,
+living in different time zones.
+
+</p>
+
+
+<p>
+
+And yes, sometimes it is hard.
+I miss your presence.
+I miss your touch.
+I miss simply having you around.
+
+</p>
+
+
+<p>
+
+But if there is one thing
+this distance has taught me,
+it's that I don't love you
+only because you're physically beside me.
+
+</p>
+
+
+<p class="highlight">
+
+I love you even when you're
+thousands of kilometres away.
+
+</p>
+
+
+<p>
+
+I don't know exactly what our future
+will look like,
+but I know what I want.
+
+</p>
+
+
+<p>
+
+I want more memories with you.
+
+</p>
+
+
+<p>
+
+More stupid fights
+that we'll laugh about later.
+
+</p>
+
+
+<p>
+
+More birthdays together.
+
+</p>
+
+
+<p>
+
+More ordinary days where
+I don't have to miss you through a screen.
+
+</p>
+
+
+<p>
+
+And hopefully, one day,
+no more counting the kilometres between us.
+
+</p>
+
+
+<p class="highlight">
+
+So today, on your birthday,
+I just want you to remember one thing:
+
+</p>
+
+
+<p class="pink">
+
+You are loved.
+You are important.
+And you have someone
+who will always be in your corner.
+
+</p>
+
+
+<p>
+
+Even when I'm your little problem. 😂❤️
+
+</p>
+
+
+<div class="letter-signature">
+
+Happy Birthday, Baby.
+
+<br><br>
+
+I love you.
+
+<br><br>
+
+And if life gave me the choice again...
+
+<br><br>
+
+<strong>
+I'd still choose you.
+</strong>
+
+<br>
+
+Every single time. ❤️
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
      FINAL ANALYSIS
 ========================================= -->
 
@@ -1211,11 +1736,21 @@ Happy Birthday, Akhil.
 
 <script>
 
+
+/* =========================================
+   MAIN ANALYSIS
+========================================= */
+
 function startAnalysis() {
 
-    document.getElementById("openingScreen").style.display = "none";
+    document.getElementById(
+        "openingScreen"
+    ).style.display = "none";
 
-    document.getElementById("analysisScreen").style.display = "flex";
+
+    document.getElementById(
+        "analysisScreen"
+    ).style.display = "flex";
 
 
     const messages = [
@@ -1249,45 +1784,64 @@ function startAnalysis() {
 
 
     const text =
-        document.getElementById("analysisText");
+        document.getElementById(
+            "analysisText"
+        );
 
 
     const bar =
-        document.getElementById("loaderBar");
+        document.getElementById(
+            "loaderBar"
+        );
 
 
     function nextStep() {
 
         if (index < messages.length) {
 
-            text.innerText = messages[index];
+            text.innerText =
+                messages[index];
+
 
             bar.style.width =
-                ((index + 1) / messages.length * 100) + "%";
+                ((index + 1) /
+                messages.length *
+                100) + "%";
+
 
             index++;
 
-            setTimeout(nextStep, 800);
+
+            setTimeout(
+                nextStep,
+                800
+            );
 
         }
 
         else {
 
-            setTimeout(function() {
+            setTimeout(
+                function() {
 
-                document.getElementById(
-                    "analysisScreen"
-                ).style.display = "none";
-
-
-                document.getElementById(
-                    "dashboard"
-                ).style.display = "block";
+                    document.getElementById(
+                        "analysisScreen"
+                    ).style.display = "none";
 
 
-                window.scrollTo(0, 0);
+                    document.getElementById(
+                        "dashboard"
+                    ).style.display = "block";
 
-            }, 800);
+
+                    window.scrollTo(
+                        0,
+                        0
+                    );
+
+                },
+                800
+            );
 
         }
 
@@ -1297,6 +1851,136 @@ function startAnalysis() {
     nextStep();
 
 }
+
+
+
+/* =========================================
+   CONFIDENTIAL BIRTHDAY FILE
+========================================= */
+
+function openBirthdayFile() {
+
+
+    const button =
+        document.querySelector(
+            ".open-file-button"
+        );
+
+
+    const loader =
+        document.getElementById(
+            "fileLoader"
+        );
+
+
+    const loaderText =
+        document.getElementById(
+            "fileLoaderText"
+        );
+
+
+    const progress =
+        document.getElementById(
+            "fileProgressBar"
+        );
+
+
+    const letter =
+        document.getElementById(
+            "birthdayLetter"
+        );
+
+
+    button.style.display =
+        "none";
+
+
+    loader.style.display =
+        "block";
+
+
+    const messages = [
+
+        "AUTHENTICATING...",
+
+        "VERIFYING SUBJECT...",
+
+        "ACCESSING PERSONAL FILE...",
+
+        "DECRYPTING MESSAGE...",
+
+        "ACCESS GRANTED ❤️"
+
+    ];
+
+
+    let step = 0;
+
+
+    function runLoader() {
+
+
+        if (step < messages.length) {
+
+
+            loaderText.innerText =
+                messages[step];
+
+
+            progress.style.width =
+                ((step + 1) /
+                messages.length *
+                100) + "%";
+
+
+            step++;
+
+
+            setTimeout(
+                runLoader,
+                700
+            );
+
+
+        }
+
+        else {
+
+
+            setTimeout(
+                function() {
+
+
+                    loader.style.display =
+                        "none";
+
+
+                    letter.style.display =
+                        "block";
+
+
+                    letter.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+
+                },
+                700
+            );
+
+        }
+
+    }
+
+
+    runLoader();
+
+}
+
 
 </script>
 
