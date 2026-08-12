@@ -97,6 +97,7 @@ button:hover {
 .heart {
     margin-top: 30px;
     font-size: 25px;
+    animation: heartbeat 1.5s infinite;
 }
 
 
@@ -159,6 +160,7 @@ button:hover {
 
 .dashboard-header {
     margin-bottom: 60px;
+    animation: fadeUp 1s ease;
 }
 
 .dashboard-header h2 {
@@ -172,6 +174,7 @@ button:hover {
 
 .section {
     margin-bottom: 90px;
+    animation: fadeUp 1s ease;
 }
 
 .section-title {
@@ -201,7 +204,7 @@ button:hover {
 
 .card:hover {
     border-color: #ff4f81;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .card-title {
@@ -221,7 +224,7 @@ button:hover {
 
 
 /* =========================================
-   DISTANCE
+   LONG DISTANCE
 ========================================= */
 
 .distance-box {
@@ -264,6 +267,7 @@ button:hover {
 .timeline-item {
     position: relative;
     margin-bottom: 50px;
+    animation: slideIn 1s ease;
 }
 
 .timeline-item::before {
@@ -309,12 +313,13 @@ button:hover {
     border: 1px solid #333;
     background: rgba(255,255,255,0.03);
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.4s;
+    animation: fadeUp 1.2s ease;
 }
 
 .memory-card:hover {
     border-color: #ff4f81;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 
 .memory-card img {
@@ -322,6 +327,11 @@ button:hover {
     height: 420px;
     object-fit: cover;
     display: block;
+    transition: transform 0.7s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.05);
 }
 
 .memory-caption {
@@ -353,6 +363,11 @@ button:hover {
     padding: 20px 25px;
     margin-bottom: 15px;
     background: rgba(255,255,255,0.03);
+    transition: 0.3s;
+}
+
+.reason:hover {
+    transform: translateX(5px);
 }
 
 .reason strong {
@@ -374,6 +389,7 @@ button:hover {
 .file-lock {
     font-size: 45px;
     margin-bottom: 15px;
+    animation: lockPulse 2s infinite;
 }
 
 .file-status {
@@ -436,6 +452,7 @@ button:hover {
     padding-top: 40px;
     border-top: 1px solid #333;
     text-align: left;
+    animation: fadeUp 1.5s ease;
 }
 
 .letter-header {
@@ -488,6 +505,7 @@ button:hover {
 .final {
     text-align: center;
     padding: 100px 20px;
+    animation: fadeUp 1.5s ease;
 }
 
 .final h2 {
@@ -507,18 +525,6 @@ button:hover {
     font-size: 55px;
     margin: 45px 0 25px;
     animation: heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
 }
 
 .final-stats {
@@ -557,6 +563,90 @@ button:hover {
 .signature {
     margin-top: 35px;
     color: #777;
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+.whatsapp-section {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    text-decoration: none;
+    background: #25D366;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.06);
+    background: #20b957;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+@keyframes lockPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
 }
 
 
@@ -736,6 +826,7 @@ Relationship Intelligence Report • Birthday Edition
 </div>
 
 
+
 <!-- KPI -->
 
 <div class="section">
@@ -823,7 +914,6 @@ PROJECT STARTED
 </div>
 
 </div>
-
 
 </div>
 
@@ -1097,7 +1187,7 @@ MEMORY ARCHIVE
 <div class="memory-card">
 
 <img
-src="photos/memory1.jpeg"
+src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.35.jpeg"
 alt="Our first memory"
 >
 
@@ -1135,7 +1225,7 @@ that distance cannot take away.
 <div class="memory-card">
 
 <img
-src="photos/memory2.jpeg"
+src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.33.jpeg"
 alt="Our second memory"
 >
 
@@ -1172,7 +1262,9 @@ A memory I will always keep.
 
 
 
-<!-- ROOT CAUSE -->
+<!-- =========================================
+     ROOT CAUSE
+========================================= -->
 
 <div class="section">
 
@@ -1805,6 +1897,25 @@ STATUS: ONGOING ❤️
 — Salma
 </div>
 
+
+<!-- WHATSAPP -->
+
+<div class="whatsapp-section">
+
+<a
+class="whatsapp-button"
+href="https://wa.me/917416785625?text=Baby%2C%20I%20found%20your%20secret%20message%20%E2%9D%A4%EF%B8%8F"
+target="_blank"
+rel="noopener"
+>
+
+💚 SEND ME A MESSAGE
+
+</a>
+
+</div>
+
+
 </div>
 
 
@@ -1891,7 +2002,9 @@ function startAnalysis() {
                 800
             );
 
-        } else {
+        }
+
+        else {
 
             setTimeout(
                 function() {
@@ -1951,9 +2064,11 @@ function openBirthdayFile() {
         );
 
 
-    button.style.display = "none";
+    button.style.display =
+        "none";
 
-    loader.style.display = "block";
+    loader.style.display =
+        "block";
 
 
     const messages = [
@@ -1993,7 +2108,9 @@ function openBirthdayFile() {
                 700
             );
 
-        } else {
+        }
+
+        else {
 
             setTimeout(
                 function() {
