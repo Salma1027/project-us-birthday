@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Project: Us ❤️</title>
@@ -26,12 +25,13 @@ body {
     background: #080808;
     color: white;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 
-/* =========================
+/* =========================================
    OPENING SCREEN
-========================= */
+========================================= */
 
 .screen {
     min-height: 100vh;
@@ -106,9 +106,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    ANALYSIS SCREEN
-========================= */
+========================================= */
 
 #analysisScreen {
     display: none;
@@ -150,9 +150,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    DASHBOARD
-========================= */
+========================================= */
 
 #dashboard {
     display: none;
@@ -189,9 +189,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    KPI CARDS
-========================= */
+========================================= */
 
 .cards {
     display: grid;
@@ -203,6 +203,12 @@ button:hover {
     border: 1px solid #333;
     padding: 30px;
     background: rgba(255,255,255,0.03);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #ff4f81;
+    transform: translateY(-3px);
 }
 
 .card-title {
@@ -221,9 +227,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    LONG DISTANCE
-========================= */
+========================================= */
 
 .distance-box {
     border: 1px solid #333;
@@ -255,9 +261,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    TIMELINE
-========================= */
+========================================= */
 
 .timeline {
     border-left: 1px solid #444;
@@ -266,19 +272,20 @@ button:hover {
 }
 
 .timeline-item {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
     position: relative;
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     background: #ff4f81;
     border-radius: 50%;
     left: -36px;
     top: 5px;
+    box-shadow: 0 0 15px rgba(255,79,129,0.6);
 }
 
 .timeline-date {
@@ -299,9 +306,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    MEMORY ARCHIVE
-========================= */
+========================================= */
 
 .memories {
     display: grid;
@@ -313,6 +320,12 @@ button:hover {
     border: 1px solid #333;
     background: rgba(255,255,255,0.03);
     overflow: hidden;
+    transition: 0.4s;
+}
+
+.memory-card:hover {
+    border-color: #ff4f81;
+    transform: translateY(-5px);
 }
 
 .memory-card img {
@@ -348,9 +361,9 @@ button:hover {
 }
 
 
-/* =========================
-   ROOT CAUSE
-========================= */
+/* =========================================
+   ROOT CAUSE ANALYSIS
+========================================= */
 
 .reason {
     border-left: 2px solid #ff4f81;
@@ -365,9 +378,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================
    FINAL
-========================= */
+========================================= */
 
 .final {
     text-align: center;
@@ -390,17 +403,35 @@ button:hover {
 .final-heart {
     font-size: 55px;
     margin-top: 40px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 650px) {
 
     h1 {
         font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    .subtitle {
+        font-size: 15px;
     }
 
     .cards {
@@ -423,6 +454,10 @@ button:hover {
         height: 350px;
     }
 
+    .final h2 {
+        font-size: 32px;
+    }
+
 }
 
 </style>
@@ -433,9 +468,9 @@ button:hover {
 <body>
 
 
-<!-- =========================
+<!-- =========================================
      OPENING
-========================= -->
+========================================= -->
 
 <section class="screen" id="openingScreen">
 
@@ -472,7 +507,7 @@ PROJECT START:
 
 <p>
 LAST IN-PERSON MEETING:
-<span>January 5, 2026</span>
+<span>January 4, 2026</span>
 </p>
 
 <p>
@@ -486,6 +521,7 @@ CLASSIFICATION:
 </p>
 
 </div>
+
 
 <button onclick="startAnalysis()">
 INITIALIZE ANALYSIS →
@@ -501,9 +537,9 @@ INITIALIZE ANALYSIS →
 
 
 
-<!-- =========================
+<!-- =========================================
      ANALYSIS
-========================= -->
+========================================= -->
 
 <section class="screen" id="analysisScreen">
 
@@ -532,14 +568,16 @@ id="loaderBar">
 
 
 
-<!-- =========================
+<!-- =========================================
      DASHBOARD
-========================= -->
+========================================= -->
 
 <section id="dashboard">
 
 <div class="dashboard-container">
 
+
+<!-- HEADER -->
 
 <div class="dashboard-header">
 
@@ -554,7 +592,10 @@ Relationship Intelligence Report • Birthday Edition
 </div>
 
 
-<!-- KPI SECTION -->
+
+<!-- =========================================
+     KPI
+========================================= -->
 
 <div class="section">
 
@@ -648,7 +689,9 @@ PROJECT STARTED
 
 
 
-<!-- LONG DISTANCE -->
+<!-- =========================================
+     LONG DISTANCE
+========================================= -->
 
 <div class="section">
 
@@ -713,7 +756,9 @@ CONNECTION STATUS: ACTIVE ❤️
 
 
 
-<!-- TIMELINE -->
+<!-- =========================================
+     REAL RELATIONSHIP TIMELINE
+========================================= -->
 
 <div class="section">
 
@@ -723,6 +768,8 @@ PROJECT TIMELINE
 
 <div class="timeline">
 
+
+<!-- JULY -->
 
 <div class="timeline-item">
 
@@ -740,48 +787,126 @@ The day our story officially began.
 
 <br><br>
 
-Two people.
-One decision.
+I wasn't looking for love,
+but somehow you came into my life.
 
-<br>
+<br><br>
 
-And a project neither of us knew
-would become this important.
-
-</div>
+And what started that day
+became something I never expected.
 
 </div>
 
+</div>
+
+
+<!-- AUGUST -->
 
 <div class="timeline-item">
 
 <div class="timeline-date">
-05 JANUARY 2026
+31 AUGUST 2025
 </div>
 
 <div class="timeline-title">
-THE DISTANCE PHASE
+THE INDIA CHAPTER 🇮🇳
 </div>
 
 <div class="timeline-text">
 
-The last time we were together
-before the distance became part
-of our story.
+I came back to India.
 
 <br><br>
 
-India and the USA became
-separated by thousands of kilometres.
+The kilometres between us
+suddenly became real.
+
+<br>
+
+But the relationship didn't stop.
 
 <br><br>
 
-But the project continued.
+We continued choosing each other
+even when being together
+wasn't easy anymore.
 
 </div>
 
 </div>
 
+
+<!-- DECEMBER -->
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+DECEMBER 2025
+</div>
+
+<div class="timeline-title">
+REUNION ❤️
+</div>
+
+<div class="timeline-text">
+
+And then you came to India.
+
+<br><br>
+
+After all the distance,
+we finally had our time together again.
+
+<br><br>
+
+Those moments became memories
+I would later wish I could hold onto forever.
+
+</div>
+
+</div>
+
+
+<!-- JANUARY 4 -->
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+04 JANUARY 2026
+</div>
+
+<div class="timeline-title">
+THE LAST DAY TOGETHER
+</div>
+
+<div class="timeline-text">
+
+I didn't know that day would become
+so important.
+
+<br><br>
+
+It was the last day I saw you.
+
+<br>
+
+The last day I touched you.
+
+<br><br>
+
+I didn't know I was living
+a moment I would later miss this much.
+
+<br><br>
+
+And then the distance began.
+
+</div>
+
+</div>
+
+
+<!-- TODAY -->
 
 <div class="timeline-item">
 
@@ -803,6 +928,10 @@ Different time zone.
 
 <br>
 
+Thousands of kilometres apart.
+
+<br><br>
+
 Still the same person.
 
 <br>
@@ -813,15 +942,16 @@ Still us.
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- =========================
+
+<!-- =========================================
      MEMORY ARCHIVE
-========================= -->
+========================================= -->
 
 <div class="section">
 
@@ -837,7 +967,7 @@ MEMORY ARCHIVE
 <div class="memory-card">
 
 <img
-src="WhatsApp%20Image%202026-08-11%20at%2018.49.33.jpeg"
+src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.33.jpeg"
 alt="Our first memory"
 >
 
@@ -848,7 +978,7 @@ MEMORY 01
 </div>
 
 <h3>
-Where It Started
+A Moment We Keep
 </h3>
 
 <p>
@@ -861,9 +991,8 @@ One moment.
 
 <br>
 
-And the beginning of something
-that became much bigger than either
-of us expected.
+One more piece of our story
+that distance cannot take away.
 
 </p>
 
@@ -877,7 +1006,7 @@ of us expected.
 <div class="memory-card">
 
 <img
-src="WhatsApp%20Image%202026-08-11%20at%2018.49.35.jpeg"
+src="photos/WhatsApp%20Image%202026-08-11%20at%2018.49.35.jpeg"
 alt="Our second memory"
 >
 
@@ -893,16 +1022,13 @@ Before The Distance
 
 <p>
 
-January 5, 2026.
+A moment from the time
+when I didn't have to miss
+your presence through a screen.
 
-<br>
+<br><br>
 
-The distance eventually became real.
-
-<br>
-
-But so did everything we built
-before it.
+A memory I will always keep.
 
 </p>
 
@@ -917,7 +1043,9 @@ before it.
 
 
 
-<!-- ROOT CAUSE -->
+<!-- =========================================
+     ROOT CAUSE ANALYSIS
+========================================= -->
 
 <div class="section">
 
@@ -1015,7 +1143,9 @@ There are simply too many reasons.
 
 
 
-<!-- FINAL -->
+<!-- =========================================
+     FINAL ANALYSIS
+========================================= -->
 
 <div class="final">
 
@@ -1075,6 +1205,10 @@ Happy Birthday, Akhil.
 
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
 function startAnalysis() {
@@ -1083,26 +1217,40 @@ function startAnalysis() {
 
     document.getElementById("analysisScreen").style.display = "flex";
 
+
     const messages = [
 
         "Authenticating subject...",
+
         "Loading memories...",
+
         "Analyzing conversations...",
+
         "Calculating happiness impact...",
+
         "Evaluating long-distance resilience...",
+
         "Analyzing care patterns...",
+
         "Evaluating protective behavior...",
+
         "Analyzing relationship history...",
+
         "Loading memory archive...",
+
         "Running emotional intelligence model...",
+
         "Finalizing results..."
 
     ];
 
+
     let index = 0;
+
 
     const text =
         document.getElementById("analysisText");
+
 
     const bar =
         document.getElementById("loaderBar");
@@ -1121,7 +1269,9 @@ function startAnalysis() {
 
             setTimeout(nextStep, 800);
 
-        } else {
+        }
+
+        else {
 
             setTimeout(function() {
 
@@ -1129,9 +1279,11 @@ function startAnalysis() {
                     "analysisScreen"
                 ).style.display = "none";
 
+
                 document.getElementById(
                     "dashboard"
                 ).style.display = "block";
+
 
                 window.scrollTo(0, 0);
 
@@ -1141,11 +1293,13 @@ function startAnalysis() {
 
     }
 
+
     nextStep();
 
 }
 
 </script>
+
 
 </body>
 
