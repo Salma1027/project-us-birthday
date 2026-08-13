@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project: Us ❤️</title>
+<title>For Akhil ❤️</title>
 
 <style>
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -21,910 +19,749 @@ html {
 }
 
 body {
-    background: #080808;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
+    background: #08070c;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
 }
 
-.screen {
+/* ================================
+   BACKGROUND
+================================ */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%,100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.8);
+    }
+}
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    animation: floatHeart 8s linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+    }
+
+}
+
+/* ================================
+   COMMON
+================================ */
+
+.page {
+    position: relative;
+    z-index: 2;
+}
+
+section {
     min-height: 100vh;
+    padding: 100px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
 }
 
-.container {
+.content {
     width: 100%;
-    max-width: 760px;
+    max-width: 850px;
     text-align: center;
 }
 
-.classified {
-    color: #777;
+.small-label {
+    color: #b99aa7;
     font-size: 11px;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
     margin-bottom: 25px;
 }
 
-h1 {
-    font-size: 64px;
-    letter-spacing: 8px;
-    margin-bottom: 15px;
+.title {
+    font-size: clamp(48px, 10vw, 100px);
+    font-weight: normal;
+    letter-spacing: 3px;
+    line-height: 1;
 }
 
 .subtitle {
-    color: #aaa;
-    font-size: 18px;
-    margin-bottom: 45px;
-}
-
-.details {
-    border: 1px solid #333;
-    padding: 25px;
-    margin-bottom: 35px;
-    text-align: left;
-    background: rgba(255,255,255,0.03);
-}
-
-.details p {
-    margin: 12px 0;
-    color: #777;
-}
-
-.details span {
-    color: white;
-}
-
-button {
-    background: white;
-    color: black;
-    border: none;
-    padding: 16px 32px;
-    font-size: 13px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ff4f81;
-    color: white;
-    transform: scale(1.04);
-}
-
-.heart {
     margin-top: 30px;
-    font-size: 25px;
-    animation: heartbeat 1.5s infinite;
-}
-
-
-/* ANALYSIS */
-
-#analysisScreen {
-    display: none;
-}
-
-.analysis-box {
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid #333;
-    padding: 40px;
-    background: rgba(255,255,255,0.03);
-}
-
-.analysis-title {
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-}
-
-#analysisText {
+    color: #c8bcc1;
     font-size: 20px;
-    min-height: 35px;
+    font-style: italic;
+}
+
+.pink {
+    color: #ff789c;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 15px 32px;
+    border: 1px solid rgba(255,120,156,0.6);
+    color: white;
+    text-decoration: none;
+    background: rgba(255,120,156,0.08);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.button:hover {
+    background: #ff789c;
+    color: #08070c;
+    box-shadow: 0 0 30px rgba(255,120,156,0.35);
+    transform: translateY(-3px);
+}
+
+/* ================================
+   OPENING
+================================ */
+
+#opening {
+    min-height: 100vh;
+    position: relative;
+}
+
+.opening-heart {
+    margin-top: 45px;
+    font-size: 42px;
+    animation: heartbeat 1.6s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+}
+
+/* ================================
+   INTRO
+================================ */
+
+#intro {
+    display: none;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 1.2s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-text {
+    max-width: 650px;
+    margin: 35px auto 0;
+    color: #c9c0c5;
+    font-size: 19px;
+    line-height: 2;
+}
+
+/* ================================
+   CHAPTERS
+================================ */
+
+.chapter {
+    display: none;
+}
+
+.chapter-number {
+    color: #ff789c;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.chapter-title {
+    font-size: clamp(35px, 7vw, 65px);
+    font-weight: normal;
     margin-bottom: 30px;
 }
 
-.loader {
-    width: 100%;
-    height: 2px;
-    background: #222;
-}
-
-.loader-bar {
-    width: 0%;
-    height: 100%;
-    background: white;
-    transition: width 0.8s ease;
-}
-
-
-/* DASHBOARD */
-
-#dashboard {
-    display: none;
-    padding: 70px 25px;
-}
-
-.dashboard-container {
-    max-width: 1000px;
+.chapter-text {
+    max-width: 650px;
     margin: auto;
+    color: #c8c0c5;
+    font-size: 18px;
+    line-height: 2;
 }
 
-.dashboard-header {
-    margin-bottom: 60px;
-    animation: fadeUp 1s ease;
+.chapter-text strong {
+    color: white;
 }
 
-.dashboard-header h2 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.dashboard-header p {
-    color: #777;
-}
-
-.section {
-    margin-bottom: 90px;
-    animation: fadeUp 1s ease;
-}
-
-.section-title {
-    color: #777;
-    font-size: 11px;
+.chapter-date {
+    color: #ff9db5;
+    font-size: 13px;
     letter-spacing: 3px;
     margin-bottom: 25px;
 }
 
+/* ================================
+   PHOTO
+================================ */
 
-/* KPI */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.photo-section {
+    display: none;
 }
 
-.card {
-    border: 1px solid #333;
-    padding: 30px;
-    background: rgba(255,255,255,0.03);
-    transition: 0.3s;
+.photo-frame {
+    width: min(90vw, 550px);
+    margin: 40px auto;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.025);
+    box-shadow: 0 20px 70px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: scale(0.9);
 }
 
-.card:hover {
-    border-color: #ff4f81;
-    transform: translateY(-5px);
+.photo-frame.visible {
+    animation: photoReveal 1.5s ease forwards;
 }
 
-.card-title {
-    color: #777;
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+@keyframes photoReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
 }
 
-.card-value {
-    font-size: 34px;
+.photo-frame img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    display: block;
 }
 
-.love {
-    color: #ff4f81;
+.photo-caption {
+    padding: 22px 10px 12px;
+    color: #aaa;
+    font-size: 15px;
+    font-style: italic;
 }
 
+/* ================================
+   DISTANCE
+================================ */
 
-/* DISTANCE */
-
-.distance-box {
-    border: 1px solid #333;
-    padding: 40px;
-    text-align: center;
-    background: rgba(255,255,255,0.03);
-}
-
-.countries {
-    font-size: 27px;
-    margin: 20px 0;
-}
-
-.distance-line {
-    color: #555;
+#distance {
+    display: none;
 }
 
 .distance-number {
-    font-size: 38px;
-    margin: 15px 0;
-}
-
-.finding {
-    margin-top: 30px;
-    color: #aaa;
-}
-
-
-/* TIMELINE */
-
-.timeline {
-    border-left: 1px solid #444;
-    margin-left: 10px;
-    padding-left: 30px;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    animation: slideIn 1s ease;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #ff4f81;
-    border-radius: 50%;
-    left: -36px;
-    top: 7px;
-    box-shadow: 0 0 12px rgba(255,79,129,0.6);
-}
-
-.timeline-date {
-    color: #ff4f81;
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.timeline-title {
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-
-.timeline-text {
-    color: #aaa;
-}
-
-
-/* MEMORY ARCHIVE */
-
-.memories {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.memory-card {
-    border: 1px solid #333;
-    background: rgba(255,255,255,0.03);
-    overflow: hidden;
-    transition: 0.4s;
-    animation: fadeUp 1.2s ease;
-}
-
-.memory-card:hover {
-    border-color: #ff4f81;
-    transform: translateY(-6px);
-}
-
-.memory-card img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.7s ease;
-}
-
-.memory-card:hover img {
-    transform: scale(1.05);
-}
-
-.memory-caption {
-    padding: 25px;
-}
-
-.memory-number {
-    color: #ff4f81;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.memory-caption h3 {
-    margin-bottom: 10px;
-}
-
-.memory-caption p {
-    color: #999;
-}
-
-
-/* ROOT CAUSE */
-
-.reason {
-    border-left: 2px solid #ff4f81;
-    padding: 20px 25px;
-    margin-bottom: 15px;
-    background: rgba(255,255,255,0.03);
-    transition: 0.3s;
-}
-
-.reason:hover {
-    transform: translateX(5px);
-}
-
-.reason strong {
+    font-family: Arial, sans-serif;
+    font-size: clamp(55px, 12vw, 110px);
+    margin: 35px 0;
     color: white;
+    opacity: 0;
 }
 
-
-/* CONFIDENTIAL FILE */
-
-.confidential-file {
-    border: 1px solid #333;
-    padding: 45px 30px;
-    text-align: center;
-    background: rgba(255,255,255,0.03);
+.distance-number.show {
+    animation: numberReveal 1.5s ease forwards;
 }
 
-.file-lock {
-    font-size: 45px;
-    margin-bottom: 15px;
-    animation: lockPulse 2s infinite;
+@keyframes numberReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(1.5);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
 }
 
-.file-status {
-    color: #777;
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+.distance-text {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 2;
 }
 
-.file-title {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
+/* ================================
+   LETTER
+================================ */
 
-.file-info {
-    color: #888;
-    margin-bottom: 30px;
-}
-
-.open-file-button {
-    background: transparent;
-    color: white;
-    border: 1px solid #555;
-}
-
-.file-loader {
+#letter {
     display: none;
-    margin-top: 30px;
 }
 
-.file-loader-text {
-    color: #888;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.file-progress {
-    max-width: 400px;
-    height: 2px;
-    background: #222;
+.letter-card {
+    max-width: 750px;
     margin: auto;
+    padding: 45px 35px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.025);
+    box-shadow: 0 30px 100px rgba(0,0,0,0.35);
 }
 
-.file-progress-bar {
-    width: 0%;
-    height: 100%;
-    background: #ff4f81;
-    transition: width 0.15s linear;
-}
-
-
-/* LETTER */
-
-.birthday-letter {
-    display: none;
-    margin-top: 45px;
-    padding-top: 40px;
-    border-top: 1px solid #333;
-    text-align: left;
-    animation: fadeUp 1.5s ease;
-}
-
-.letter-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.letter-header h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.letter-header p {
-    color: #777;
-    font-size: 10px;
-    letter-spacing: 3px;
+.letter-heading {
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 35px;
 }
 
 .letter-body {
-    max-width: 700px;
-    margin: auto;
+    text-align: left;
 }
 
 .letter-body p {
-    color: #aaa;
+    color: #c8c0c5;
     font-size: 17px;
     line-height: 2;
     margin-bottom: 25px;
 }
 
-.highlight {
-    color: white !important;
-}
-
-.pink {
-    color: #ff4f81 !important;
-}
-
-.letter-signature {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 22px;
-}
-
-
-/* FINAL */
-
-.final {
-    text-align: center;
-    padding: 100px 20px;
-    animation: fadeUp 1.5s ease;
-}
-
-.final h2 {
-    font-size: 44px;
-    margin-bottom: 30px;
-}
-
-.final p {
-    max-width: 700px;
-    margin: auto;
-    color: #aaa;
-    font-size: 18px;
-    line-height: 2;
-}
-
-.final-heart {
-    font-size: 55px;
-    margin: 45px 0 25px;
-    animation: heartbeat 1.5s infinite;
-}
-
-.final-stats {
-    max-width: 500px;
-    margin: 50px auto 0;
-    padding: 25px 0;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-    display: grid;
-    gap: 18px;
-    color: #777;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-.final-stats strong {
+.letter-body .highlight {
     color: white;
-    margin-left: 8px;
 }
 
-.project-status {
-    margin-top: 70px;
-    padding: 35px;
-    border: 1px solid #333;
-    background: rgba(255,255,255,0.03);
-    font-size: 18px;
-    letter-spacing: 4px;
-}
-
-.status-active {
-    color: #ff4f81;
-    margin-top: 15px;
-    font-size: 13px;
+.letter-body .pink-text {
+    color: #ff789c;
 }
 
 .signature {
-    margin-top: 35px;
-    color: #777;
-}
-
-
-/* WHATSAPP */
-
-.whatsapp-section {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 50px;
+    font-size: 24px;
+    line-height: 2;
 }
 
-.whatsapp-button {
+/* ================================
+   FINAL REVEAL
+================================ */
+
+#final {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-small {
+    color: #b99aa7;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.final-line {
+    margin: 35px auto;
+    width: 70px;
+    height: 1px;
+    background: #ff789c;
+}
+
+.final-distance {
+    font-family: Arial, sans-serif;
+    font-size: clamp(40px, 10vw, 85px);
+    margin: 20px 0;
+}
+
+.final-message {
+    max-width: 650px;
+    margin: 30px auto;
+    color: #c8c0c5;
+    font-size: 19px;
+    line-height: 2;
+}
+
+.choice {
+    margin-top: 45px;
+    font-size: clamp(32px, 7vw, 65px);
+    color: #ff789c;
+    font-style: italic;
+}
+
+.final-birthday {
+    margin-top: 55px;
+    font-size: 30px;
+}
+
+.final-heart {
+    margin-top: 30px;
+    font-size: 60px;
+    animation: heartbeat 1.4s infinite;
+}
+
+/* ================================
+   WHATSAPP
+================================ */
+
+.whatsapp {
     display: inline-block;
-    text-decoration: none;
+    margin-top: 45px;
+    padding: 17px 30px;
     background: #25D366;
     color: white;
-    padding: 16px 28px;
-    border-radius: 4px;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(37,211,102,0.15);
+    transition: 0.4s;
 }
 
-.whatsapp-button:hover {
-    transform: scale(1.06);
-    background: #20b957;
+.whatsapp:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 40px rgba(37,211,102,0.4);
 }
 
+/* ================================
+   FINAL HEART BURST
+================================ */
 
-/* ANIMATIONS */
+.burst-heart {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    z-index: 20;
+    animation: burst 2.5s ease-out forwards;
+}
 
-@keyframes fadeUp {
+@keyframes burst {
 
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
+    0% {
+        transform: translate(-50%,-50%) scale(0);
         opacity: 1;
-        transform: translateY(0);
     }
 
-}
-
-@keyframes slideIn {
-
-    from {
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.4);
         opacity: 0;
-        transform: translateX(-25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 
 }
 
-@keyframes heartbeat {
+/* ================================
+   MOBILE
+================================ */
 
-    0%, 100% {
-        transform: scale(1);
-    }
+@media (max-width: 600px) {
 
-    50% {
-        transform: scale(1.18);
-    }
-
-}
-
-@keyframes lockPulse {
-
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-    h1 {
-        font-size: 40px;
-        letter-spacing: 5px;
+    section {
+        padding: 80px 20px;
     }
 
     .subtitle {
-        font-size: 15px;
+        font-size: 17px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .chapter-text,
+    .intro-text,
+    .distance-text,
+    .final-message {
+        font-size: 17px;
     }
 
-    .memories {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard-header h2 {
-        font-size: 32px;
-    }
-
-    .distance-number {
-        font-size: 30px;
-    }
-
-    .memory-card img {
-        height: 350px;
-    }
-
-    .final h2 {
-        font-size: 32px;
-    }
-
-    .letter-header h2 {
-        font-size: 28px;
+    .letter-card {
+        padding: 30px 22px;
     }
 
     .letter-body p {
         font-size: 16px;
     }
 
+    .photo-frame img {
+        max-height: 520px;
+    }
+
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+<div id="stars"></div>
 
-<!-- OPENING -->
+<div class="page">
 
-<section class="screen" id="openingScreen">
 
-<div class="container">
+<!-- =========================================
+     OPENING
+========================================= -->
 
-<div class="classified">
-CONFIDENTIAL • PERSONAL ANALYSIS
+<section id="opening">
+
+<div class="content">
+
+<div class="small-label">
+A little something for you
 </div>
 
-<h1>
-PROJECT: US
+<h1 class="title">
+For <span class="pink">Akhil</span>
 </h1>
 
-<div class="subtitle">
-Relationship Intelligence Dashboard
-</div>
-
-<div class="details">
-
-<p>
-ANALYST:
-<span>Salma</span>
+<p class="subtitle">
+I made something for you...
 </p>
 
-<p>
-SUBJECT:
-<span>Akhil Oliver</span>
-</p>
-
-<p>
-PROJECT START:
-<span>July 21, 2025</span>
-</p>
-
-<p>
-LAST IN-PERSON MEETING:
-<span>January 4, 2026</span>
-</p>
-
-<p>
-PROJECT STATUS:
-<span>Successfully Completed ❤️</span>
-</p>
-
-<p>
-CLASSIFICATION:
-<span>Extremely Important</span>
-</p>
-
-</div>
-
-<button onclick="startAnalysis()">
-INITIALIZE ANALYSIS →
-</button>
-
-<div class="heart">
+<div class="opening-heart">
 ❤️
 </div>
 
-</div>
-
-</section>
-
-
-<!-- ANALYSIS -->
-
-<section class="screen" id="analysisScreen">
-
-<div class="analysis-box">
-
-<div class="analysis-title">
-RUNNING RELATIONSHIP ANALYSIS
-</div>
-
-<div id="analysisText">
-Initializing...
-</div>
-
-<div class="loader">
-
-<div class="loader-bar" id="loaderBar">
-</div>
-
-</div>
+<button class="button" onclick="startStory()">
+OPEN YOUR BIRTHDAY SURPRISE
+</button>
 
 </div>
 
 </section>
 
 
-<!-- DASHBOARD -->
+<!-- =========================================
+     INTRO
+========================================= -->
 
-<section id="dashboard">
+<section id="intro">
 
-<div class="dashboard-container">
+<div class="content">
 
+<div class="small-label reveal">
+Before you continue...
+</div>
 
-<div class="dashboard-header">
-
-<h2>
-Executive Summary
+<h2 class="chapter-title reveal">
+Happy Birthday, Baby ❤️
 </h2>
 
+<div class="intro-text reveal">
+
 <p>
-Relationship Intelligence Report • Birthday Edition
+I wish I could be with you today.
+</p>
+
+<br>
+
+<p>
+I wish I could see your face,
+hug you,
+annoy you,
+and celebrate your birthday beside you.
+</p>
+
+<br>
+
+<p>
+But until I can do that,
+I wanted to give you something
+that comes from me.
 </p>
 
 </div>
 
-
-<!-- KPI -->
-
-<div class="section">
-
-<div class="section-title">
-KEY PERFORMANCE INDICATORS
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-title">
-HAPPINESS IMPACT
-</div>
-
-<div class="card-value love">
-+∞%
-</div>
+<button class="button reveal" onclick="showChapter(1)">
+START OUR STORY →
+</button>
 
 </div>
 
+</section>
 
-<div class="card">
 
-<div class="card-title">
-MEMORIES CREATED
+<!-- =========================================
+     CHAPTER 1
+========================================= -->
+
+<section class="chapter" id="chapter1">
+
+<div class="content">
+
+<div class="chapter-number">
+CHAPTER 01
 </div>
 
-<div class="card-value">
-∞
+<div class="chapter-date">
+21 JULY 2025
 </div>
 
-</div>
+<h2 class="chapter-title">
+The day it started
+</h2>
 
+<div class="chapter-text">
 
-<div class="card">
-
-<div class="card-title">
-PHYSICAL DISTANCE
-</div>
-
-<div class="card-value">
-~13,000 km
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-title">
-EMOTIONAL DISTANCE
-</div>
-
-<div class="card-value love">
-0 km ❤️
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-title">
-PROBABILITY OF CHOOSING YOU AGAIN
-</div>
-
-<div class="card-value love">
-100%
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-title">
-PROJECT STARTED
-</div>
-
-<div class="card-value">
-21.07.2025
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- DISTANCE -->
-
-<div class="section">
-
-<div class="section-title">
-LONG-DISTANCE ANALYSIS
-</div>
-
-<div class="distance-box">
-
-<div class="countries">
-🇮🇳 INDIA
-</div>
-
-<div class="distance-line">
-─────────────────────
-</div>
-
-<div class="distance-number">
-~13,000 KM
-</div>
-
-<div class="distance-line">
-─────────────────────
-</div>
-
-<div class="countries">
-🇺🇸 USA
-</div>
-
-<div class="finding">
-
-<strong>
-ANALYTICAL FINDING
-</strong>
+I wasn't looking for love
+when you came into my life.
 
 <br><br>
 
-The geographical distance is real.
+Actually, I was afraid to love again.
 
-<br>
+<br><br>
+
+But somehow,
+you made me trust you.
+
+<br><br>
+
+You made me feel safe.
+You made me feel secure.
+And little by little,
+you became someone
+I couldn't imagine not having.
+
+</div>
+
+<button class="button" onclick="showChapter(2)">
+CONTINUE →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     PHOTO 1
+========================================= -->
+
+<section class="photo-section" id="photo1">
+
+<div class="content">
+
+<div class="small-label">
+A memory from us
+</div>
+
+<div class="photo-frame" id="photoFrame1">
+
+<img
+src="memory1.jpeg"
+alt="Our first memory"
+>
+
+<div class="photo-caption">
+One moment. One memory. One little piece of us. ❤️
+</div>
+
+</div>
+
+<button class="button" onclick="showChapter(3)">
+KEEP GOING →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CHAPTER 2
+========================================= -->
+
+<section class="chapter" id="chapter3">
+
+<div class="content">
+
+<div class="chapter-number">
+CHAPTER 02
+</div>
+
+<div class="chapter-date">
+31 AUGUST 2025
+</div>
+
+<h2 class="chapter-title">
+When distance became real
+</h2>
+
+<div class="chapter-text">
+
+Then I came back to India.
+
+<br><br>
+
+And suddenly,
+the kilometres between us
+weren't just a number anymore.
+
+<br><br>
 
 Different countries.
 Different schedules.
@@ -932,460 +769,285 @@ Different time zones.
 
 <br><br>
 
-But the model detected something
-the distance could not measure:
+But somehow,
+we were still us.
 
 <br><br>
 
-<span class="love">
-CONNECTION STATUS: ACTIVE ❤️
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- TIMELINE -->
-
-<div class="section">
-
-<div class="section-title">
-PROJECT TIMELINE
-</div>
-
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-<div class="timeline-date">
-21 JULY 2025
-</div>
-
-<div class="timeline-title">
-PROJECT INITIATED ❤️
-</div>
-
-<div class="timeline-text">
-
-The day our story officially began.
+The distance changed
+where we were.
 
 <br><br>
 
-I wasn't looking for love,
-but somehow you came into my life.
-
-<br><br>
-
-And what started that day
-became something I never expected.
+It didn't change
+how much you meant to me.
 
 </div>
 
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-date">
-31 AUGUST 2025
-</div>
-
-<div class="timeline-title">
-THE INDIA CHAPTER 🇮🇳
-</div>
-
-<div class="timeline-text">
-
-I came back to India.
-
-<br><br>
-
-The kilometres between us
-suddenly became real.
-
-<br><br>
-
-But the relationship didn't stop.
+<button class="button" onclick="showChapter(4)">
+CONTINUE →
+</button>
 
 </div>
 
+</section>
+
+
+<!-- =========================================
+     CHAPTER 3
+========================================= -->
+
+<section class="chapter" id="chapter4">
+
+<div class="content">
+
+<div class="chapter-number">
+CHAPTER 03
 </div>
 
-
-<div class="timeline-item">
-
-<div class="timeline-date">
+<div class="chapter-date">
 DECEMBER 2025
 </div>
 
-<div class="timeline-title">
-REUNION ❤️
-</div>
+<h2 class="chapter-title">
+And then you came back ❤️
+</h2>
 
-<div class="timeline-text">
+<div class="chapter-text">
 
-And then you came to India.
-
-<br><br>
-
-After all the distance,
-we finally had our time together again.
-
-</div>
-
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-date">
-04 JANUARY 2026
-</div>
-
-<div class="timeline-title">
-THE LAST DAY TOGETHER
-</div>
-
-<div class="timeline-text">
-
-I didn't know that day would become
-so important.
+Then you came to India.
 
 <br><br>
 
-It was the last day I saw you.
-
-<br>
-
-The last day I touched you.
+After all the waiting,
+we finally got to be together again.
 
 <br><br>
 
-And then the distance began.
-
-</div>
-
-</div>
-
-
-<div class="timeline-item">
-
-<div class="timeline-date">
-TODAY
-</div>
-
-<div class="timeline-title">
-PROJECT STATUS: STILL ACTIVE ❤️
-</div>
-
-<div class="timeline-text">
-
-Different country.
-
-<br>
-
-Different time zone.
-
-<br>
-
-Thousands of kilometres apart.
+For a little while,
+there were no screens between us.
 
 <br><br>
 
-Still the same person.
+No counting time zones.
 
-<br>
+<br><br>
 
-Still us.
+Just you and me.
 
-</div>
+<br><br>
 
-</div>
-
-</div>
-
-</div>
-
-
-<!-- MEMORY ARCHIVE -->
-
-<div class="section">
-
-<div class="section-title">
-MEMORY ARCHIVE
-</div>
-
-<div class="memories">
-
-
-<div class="memory-card">
-
-<img
-src="memory1.jpeg"
-alt="Our first memory"
->
-
-<div class="memory-caption">
-
-<div class="memory-number">
-MEMORY 01
-</div>
-
-<h3>
-A Moment We Keep
-</h3>
-
-<p>
-
-One photograph.
-
-<br>
-
-One moment.
-
-<br>
-
-One more piece of our story
-that distance cannot take away.
-
-</p>
+And those moments became
+memories I would later wish
+I could hold onto forever.
 
 </div>
 
+<button class="button" onclick="showChapter(5)">
+ONE MORE CHAPTER →
+</button>
+
 </div>
 
+</section>
 
-<div class="memory-card">
+
+<!-- =========================================
+     PHOTO 2
+========================================= -->
+
+<section class="photo-section" id="photo2">
+
+<div class="content">
+
+<div class="small-label">
+Before the distance again
+</div>
+
+<div class="photo-frame" id="photoFrame2">
 
 <img
 src="memory2.jpeg"
 alt="Our second memory"
 >
 
-<div class="memory-caption">
-
-<div class="memory-number">
-MEMORY 02
-</div>
-
-<h3>
-Before The Distance
-</h3>
-
-<p>
-
-A moment from the time
-when I didn't have to miss
-your presence through a screen.
-
-<br><br>
-
-A memory I will always keep.
-
-</p>
-
+<div class="photo-caption">
+A moment I wish I could step back into. ❤️
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-
-<!-- ROOT CAUSE -->
-
-<div class="section">
-
-<div class="section-title">
-ROOT CAUSE ANALYSIS
-</div>
-
-
-<div class="reason">
-
-<strong>
-01 • CARE
-</strong>
-
-<br>
-
-You remember the things I want,
-even when I don't have to remind you.
-
-</div>
-
-
-<div class="reason">
-
-<strong>
-02 • SUPPORT
-</strong>
-
-<br>
-
-You support me and stand beside me,
-even when life gets difficult.
-
-</div>
-
-
-<div class="reason">
-
-<strong>
-03 • PROTECTION
-</strong>
-
-<br>
-
-When something or someone hurts me,
-you don't simply forget it.
-
-<br><br>
-
-You remember what happened
-because you care about what happens
-to me.
-
-</div>
-
-
-<div class="reason">
-
-<strong>
-04 • ATTENTION TO DETAIL
-</strong>
-
-<br>
-
-Somehow, you remember the little things
-that matter to me.
-
-</div>
-
-
-<div class="reason">
-
-<strong>
-05 • YOU
-</strong>
-
-<br>
-
-The model attempted to identify
-a single root cause.
-
-<br><br>
-
-<span class="love">
-RESULT: INCONCLUSIVE.
-</span>
-
-<br><br>
-
-There are simply too many reasons.
-
-</div>
-
-</div>
-
-
-<!-- CONFIDENTIAL FILE -->
-
-<div class="section">
-
-<div class="section-title">
-CLASSIFIED DOCUMENT
-</div>
-
-<div class="confidential-file">
-
-<div class="file-lock">
-🔐
-</div>
-
-<div class="file-status">
-CONFIDENTIAL FILE DETECTED
-</div>
-
-<div class="file-title">
-BIRTHDAY MESSAGE
-</div>
-
-<div class="file-info">
-
-SUBJECT:
-<strong>Akhil Oliver</strong>
-
-<br>
-
-CLASSIFICATION:
-<strong>EXTREMELY PERSONAL</strong>
-
-<br>
-
-ACCESS:
-<strong>AUTHORIZED ❤️</strong>
-
-</div>
-
-<button
-class="open-file-button"
-onclick="openBirthdayFile()"
->
-
-OPEN CONFIDENTIAL FILE →
-
+<button class="button" onclick="showChapter(6)">
+CONTINUE →
 </button>
 
+</div>
 
-<div class="file-loader" id="fileLoader">
+</section>
+
+
+<!-- =========================================
+     JANUARY 4
+========================================= -->
+
+<section class="chapter" id="chapter6">
+
+<div class="content">
+
+<div class="chapter-number">
+CHAPTER 04
+</div>
+
+<div class="chapter-date">
+04 JANUARY 2026
+</div>
+
+<h2 class="chapter-title">
+The day I didn't know I'd miss
+</h2>
+
+<div class="chapter-text">
+
+I didn't know that day
+would become so important.
+
+<br><br>
+
+It was the last day I saw you.
+
+<br><br>
+
+The last day I could hold you.
+
+<br><br>
+
+The last day I could touch you.
+
+<br><br>
+
+I didn't know I was living
+a moment I would later miss
+this much.
+
+<br><br>
+
+And then the distance began again.
+
+</div>
+
+<button class="button" onclick="showDistance()">
+CONTINUE →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     DISTANCE
+========================================= -->
+
+<section id="distance">
+
+<div class="content">
+
+<div class="small-label">
+One thing distance cannot measure
+</div>
+
+<h2 class="chapter-title">
+13,000 km
+</h2>
 
 <div
-class="file-loader-text"
-id="fileLoaderText"
+class="distance-number"
+id="distanceNumber"
 >
-AUTHENTICATING...
+13,000 KM
 </div>
 
-<div class="file-progress">
+<div class="distance-text">
 
-<div
-class="file-progress-bar"
-id="fileProgressBar"
-></div>
+That's roughly the distance
+between us right now.
+
+<br><br>
+
+But there is another number
+I care about much more.
 
 </div>
 
+<button class="button" onclick="revealZero()">
+SHOW ME →
+</button>
+
 </div>
 
+</section>
 
-<!-- LETTER -->
 
-<div
-class="birthday-letter"
-id="birthdayLetter"
->
+<!-- =========================================
+     ZERO
+========================================= -->
 
-<div class="letter-header">
+<section id="zero" style="display:none;">
 
-<h2>
+<div class="content">
+
+<div class="small-label">
+The number that matters
+</div>
+
+<div class="distance-number show">
+0 KM
+</div>
+
+<h2 class="chapter-title">
+Between our hearts. ❤️
+</h2>
+
+<div class="distance-text">
+
+No matter how many kilometres
+are between India and the USA...
+
+<br><br>
+
+You are still close to me
+in every way that matters.
+
+</div>
+
+<button class="button" onclick="showLetter()">
+THERE'S SOMETHING I WANT TO TELL YOU →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     LETTER
+========================================= -->
+
+<section id="letter">
+
+<div class="content">
+
+<div class="small-label">
+A letter I wish I could give you in person
+</div>
+
+<div class="letter-card">
+
+<h2 class="letter-heading">
 Happy Birthday, Baby ❤️
 </h2>
 
-<p>
-PERSONAL MESSAGE • AUTHORIZED ACCESS
-</p>
-
-</div>
-
-
 <div class="letter-body">
-
 
 <p>
 Baby, happy birthday.
@@ -1393,278 +1055,206 @@ I wish I was with you today.
 I miss you so much.
 </p>
 
-
 <p>
-When I wasn't even looking for love,
+When I wasn't looking for love,
 you came into my life.
-And honestly, at that time,
+And at that time,
 I was afraid to love again.
 </p>
 
-
 <p>
-I was scared to trust someone
-and let them get close to me.
-But somehow, you made me trust you.
-You made me feel safe, secure,
-and comfortable enough to be myself around you.
+But you made me trust you.
+You made me feel safe,
+secure,
+and comfortable enough
+to be myself around you.
 </p>
-
 
 <p>
 I know how far you've come.
 I know the things you've been through
-and how you had to come from the bottom
+and how you came from the bottom
 to where you are now,
-especially during the times when you felt
-like no one was there for you.
+especially during the times
+when you felt like no one
+was there for you.
 </p>
-
 
 <p class="highlight">
-
-And I want you to know that
-I will always be there for you too.
-
+And I want you to know
+that I will always be there for you too.
 </p>
-
 
 <p>
 I know sometimes I fight with you,
 get annoyed with you,
 and become your little problem 😂.
+</p>
+
+<p>
 But even when I'm angry,
 my love for you doesn't disappear.
+I'm still here.
 </p>
-
 
 <p class="highlight">
-
 I'm not only here for the easy days.
 I'm here for you.
-
 </p>
 
-
 <p>
-
 You are one of the most caring people
 I've ever known.
-
 </p>
 
-
 <p>
-
 You remember the things I want
 even when I don't ask again.
-You remember the little things I tell you.
+You remember the little things
+I tell you.
 You support me.
 You care about what bothers me.
-
 </p>
 
-
 <p>
-
-And when someone or something hurts me,
-you don't just forget it.
-You remember because you care about
+And when someone or something
+hurts me,
+you don't simply forget it.
+You remember what happened
+because you care about
 what happens to me.
-
 </p>
 
-
 <p>
-
-Sometimes I don't even have to explain
-how I feel.
-Somehow, you already understand.
-
+Sometimes I don't even have
+to explain how I feel.
+Somehow,
+you already understand.
 </p>
 
-
 <p>
-
 And then there is our distance.
-
 </p>
 
-
 <p>
-
-I came back to India on
-<span class="pink">
-August 31, 2025
-</span>.
-
+I came back to India
+on <span class="pink-text">August 31, 2025</span>.
 </p>
 
-
 <p>
-
 Then you came to India in December,
 and for a little while,
 we had our time together again.
-
 </p>
 
-
 <p>
-
 And then came
-<span class="pink">
-January 4, 2026
-</span>.
-
+<span class="pink-text">January 4, 2026</span>.
 </p>
 
-
 <p class="highlight">
-
-I didn't know that day would become
-so important.
-
+I didn't know that day
+would become so important.
 </p>
 
-
 <p class="highlight">
-
 It was the last day I saw you.
-
 </p>
 
-
-<p class="pink">
-
+<p class="pink-text">
 The last day I touched you.
-
 </p>
 
-
 <p>
-
 I didn't know I was living
-a moment I would later miss this much.
-
+a moment I would later miss
+this much.
 </p>
 
-
 <p>
-
 Now we're thousands of kilometres apart,
 in different countries,
 living in different time zones.
-
 </p>
 
-
 <p>
-
-And yes, sometimes it is hard.
+And yes,
+sometimes it is hard.
 I miss your presence.
 I miss your touch.
 I miss simply having you around.
-
 </p>
 
-
 <p>
-
 But if there is one thing
 this distance has taught me,
 it's that I don't love you
 only because you're physically beside me.
-
 </p>
 
-
 <p class="highlight">
-
 I love you even when you're
 thousands of kilometres away.
-
 </p>
 
-
 <p>
-
 I want more memories with you.
-
 </p>
 
-
 <p>
-
 More stupid fights
 that we'll laugh about later.
-
 </p>
 
-
 <p>
-
 More birthdays together.
-
 </p>
 
-
 <p>
-
 More ordinary days where
-I don't have to miss you through a screen.
-
+I don't have to miss you
+through a screen.
 </p>
-
 
 <p>
-
 And hopefully, one day,
-no more counting the kilometres between us.
-
+no more counting the kilometres
+between us.
 </p>
-
 
 <p class="highlight">
-
-So today, on your birthday,
+So today,
+on your birthday,
 I just want you to remember one thing:
-
 </p>
 
-
-<p class="pink">
-
+<p class="pink-text">
 You are loved.
 You are important.
 And you have someone
 who will always be in your corner.
-
 </p>
-
 
 <p>
-
 Even when I'm your little problem. 😂❤️
-
 </p>
 
-
-<div class="letter-signature">
+<div class="signature">
 
 Happy Birthday, Baby.
 
-<br><br>
+<br>
 
 I love you.
 
 <br><br>
 
-And if life gave me the choice again...
+And if life gave me
+the choice again...
 
 <br><br>
 
-<strong>
+<strong class="pink">
 I'd still choose you.
 </strong>
 
@@ -1678,346 +1268,435 @@ Every single time. ❤️
 
 </div>
 
-</div>
-
-</div>
-
-
-<!-- FINAL -->
-
-<div class="final">
-
-<div class="section-title">
-FINAL SYSTEM MESSAGE
-</div>
-
-<h2>
-FINAL ANALYSIS COMPLETE.
-</h2>
-
-<p>
-
-After everything we've been through,
-
-<br>
-
-the distance, the waiting,
-the arguments,
-and all the moments we've somehow
-held onto...
-
-<br><br>
-
-<strong>
-the result hasn't changed.
-</strong>
-
-<br><br>
-
-If I could go back to
-July 21, 2025,
-
-<br>
-
-knowing everything I know now...
-
-<br><br>
-
-<span class="love">
-I would still choose you.
-</span>
-
-<br><br>
-
-And if I could skip across
-all 13,000 km
-just to be beside you right now,
-
-<br>
-
-I would.
-
-<br><br>
-
-Until I can hold you again,
-
-<br>
-
-I'll keep choosing you from here. ❤️
-
-</p>
-
-
-<div class="final-heart">
-❤️
-</div>
-
-
-<h3>
-Happy Birthday, my baby.
-</h3>
-
-
-<div class="final-stats">
-
-<div>
-NEXT MEETING:
-<strong>TBD</strong>
-</div>
-
-<div>
-NEXT HUG:
-<strong>PENDING</strong>
-</div>
-
-<div>
-NEXT KISS:
-<strong>PENDING</strong>
-</div>
-
-<div>
-LOVE:
-<strong class="love">
-ACTIVE ❤️
-</strong>
-</div>
-
-</div>
-
-
-<div class="project-status">
-
-<div>
-PROJECT: US
-</div>
-
-<div class="status-active">
-STATUS: ONGOING ❤️
-</div>
-
-</div>
-
-
-<div class="signature">
-— Salma
-</div>
-
-
-<!-- WHATSAPP -->
-
-<div class="whatsapp-section">
-
-<a
-class="whatsapp-button"
-href="https://wa.me/917416785625?text=Baby%2C%20I%20found%20your%20secret%20message%20%E2%9D%A4%EF%B8%8F"
-target="_blank"
-rel="noopener"
->
-
-💚 SEND ME A MESSAGE
-
-</a>
-
-</div>
-
-
-</div>
+<button class="button" onclick="showFinal()">
+ONE LAST THING →
+</button>
 
 </div>
 
 </section>
 
 
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<section id="final">
+
+<div class="content">
+
+<div class="final-small">
+FINAL MESSAGE
+</div>
+
+<div class="final-line"></div>
+
+<div class="final-message">
+
+There are 13,000 km between us.
+
+<br><br>
+
+There are different countries,
+different time zones,
+and days when I wish
+you were right here.
+
+<br><br>
+
+But none of that changes
+the person I choose.
+
+</div>
+
+<div class="choice">
+I would still choose you.
+</div>
+
+<div class="final-message">
+
+Every single time.
+
+<br><br>
+
+Until I can hold you again,
+I'll keep choosing you from here. ❤️
+
+</div>
+
+<div class="final-heart">
+❤️
+</div>
+
+<div class="final-birthday">
+Happy Birthday, my baby.
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/917416785625?text=Baby%2C%20I%20found%20your%20secret%20message%20%E2%9D%A4%EF%B8%8F"
+target="_blank"
+rel="noopener"
+>
+💚 SEND ME A MESSAGE
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+
 <script>
 
-function startAnalysis() {
+/* =========================================
+   CREATE STARS
+========================================= */
 
-    document.getElementById(
-        "openingScreen"
-    ).style.display = "none";
+const stars = document.getElementById("stars");
 
-    document.getElementById(
-        "analysisScreen"
-    ).style.display = "flex";
+for (let i = 0; i < 100; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+}
 
 
-    const messages = [
+/* =========================================
+   FLOATING HEARTS
+========================================= */
 
-        "Authenticating subject...",
-        "Loading memories...",
-        "Analyzing conversations...",
-        "Calculating happiness impact...",
-        "Evaluating long-distance resilience...",
-        "Analyzing care patterns...",
-        "Evaluating protective behavior...",
-        "Analyzing relationship history...",
-        "Loading memory archive...",
-        "Running emotional intelligence model...",
-        "Finalizing results..."
+function createHeart() {
 
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    heart.innerHTML =
+        Math.random() > 0.5 ? "❤️" : "♡";
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 11000);
+}
+
+setInterval(createHeart, 1600);
+
+
+/* =========================================
+   HIDE ALL MAIN SECTIONS
+========================================= */
+
+function hideSections() {
+
+    const ids = [
+        "intro",
+        "chapter1",
+        "photo1",
+        "chapter3",
+        "chapter4",
+        "photo2",
+        "chapter6",
+        "distance",
+        "zero",
+        "letter",
+        "final"
     ];
 
+    ids.forEach(id => {
 
-    let index = 0;
+        const element =
+            document.getElementById(id);
 
-    const text =
-        document.getElementById(
-            "analysisText"
-        );
-
-    const bar =
-        document.getElementById(
-            "loaderBar"
-        );
-
-
-    function nextStep() {
-
-        if (index < messages.length) {
-
-            text.innerText =
-                messages[index];
-
-            bar.style.width =
-                ((index + 1) /
-                messages.length *
-                100) + "%";
-
-            index++;
-
-            setTimeout(
-                nextStep,
-                800
-            );
-
-        } else {
-
-            setTimeout(
-                function() {
-
-                    document.getElementById(
-                        "analysisScreen"
-                    ).style.display = "none";
-
-                    document.getElementById(
-                        "dashboard"
-                    ).style.display = "block";
-
-                    window.scrollTo(
-                        0,
-                        0
-                    );
-
-                },
-                800
-            );
-
+        if (element) {
+            element.style.display = "none";
         }
+
+    });
+}
+
+
+/* =========================================
+   OPEN STORY
+========================================= */
+
+function startStory() {
+
+    document.getElementById(
+        "opening"
+    ).style.display = "none";
+
+    hideSections();
+
+    const intro =
+        document.getElementById("intro");
+
+    intro.style.display = "flex";
+
+    setTimeout(() => {
+
+        document
+            .querySelectorAll("#intro .reveal")
+            .forEach((element, index) => {
+
+                setTimeout(() => {
+
+                    element.classList.add("show");
+
+                }, index * 300);
+
+            });
+
+    }, 100);
+
+    window.scrollTo(0,0);
+}
+
+
+/* =========================================
+   SHOW CHAPTER
+========================================= */
+
+function showChapter(number) {
+
+    hideSections();
+
+    let id;
+
+    if (number === 1) id = "chapter1";
+    if (number === 2) id = "photo1";
+    if (number === 3) id = "chapter3";
+    if (number === 4) id = "chapter4";
+    if (number === 5) id = "photo2";
+    if (number === 6) id = "chapter6";
+
+    const section =
+        document.getElementById(id);
+
+    section.style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    if (id === "photo1") {
+
+        setTimeout(() => {
+
+            document
+                .getElementById("photoFrame1")
+                .classList.add("visible");
+
+        }, 200);
 
     }
 
-    nextStep();
+
+    if (id === "photo2") {
+
+        setTimeout(() => {
+
+            document
+                .getElementById("photoFrame2")
+                .classList.add("visible");
+
+        }, 200);
+
+    }
 
 }
 
 
-function openBirthdayFile() {
+/* =========================================
+   DISTANCE
+========================================= */
 
-    const button =
-        document.querySelector(
-            ".open-file-button"
-        );
+function showDistance() {
 
-    const loader =
-        document.getElementById(
-            "fileLoader"
-        );
+    hideSections();
 
-    const loaderText =
-        document.getElementById(
-            "fileLoaderText"
-        );
+    const section =
+        document.getElementById("distance");
 
-    const progress =
-        document.getElementById(
-            "fileProgressBar"
-        );
+    section.style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    setTimeout(() => {
+
+        document
+            .getElementById("distanceNumber")
+            .classList.add("show");
+
+    }, 300);
+
+}
+
+
+/* =========================================
+   ZERO
+========================================= */
+
+function revealZero() {
+
+    document.getElementById(
+        "distance"
+    ).style.display = "none";
+
+    const zero =
+        document.getElementById("zero");
+
+    zero.style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+function showLetter() {
+
+    hideSections();
 
     const letter =
-        document.getElementById(
-            "birthdayLetter"
-        );
+        document.getElementById("letter");
+
+    letter.style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
 
 
-    button.style.display = "none";
+/* =========================================
+   FINAL HEART BURST
+========================================= */
 
-    loader.style.display = "block";
+function heartBurst() {
 
-
-    const messages = [
-
-        "AUTHENTICATING...",
-        "VERIFYING SUBJECT...",
-        "ACCESSING PERSONAL FILE...",
-        "DECRYPTING MESSAGE...",
-        "ACCESS GRANTED ❤️"
-
+    const symbols = [
+        "❤️",
+        "♡",
+        "💗",
+        "✨",
+        "💕"
     ];
 
+    for (let i = 0; i < 35; i++) {
 
-    let step = 0;
+        const heart =
+            document.createElement("div");
 
+        heart.className =
+            "burst-heart";
 
-    function runLoader() {
+        heart.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
 
-        if (step < messages.length) {
+        const angle =
+            Math.random() * Math.PI * 2;
 
-            loaderText.innerText =
-                messages[step];
+        const distance =
+            120 + Math.random() * 400;
 
-            progress.style.width =
-                ((step + 1) /
-                messages.length *
-                100) + "%";
+        heart.style.setProperty(
+            "--x",
+            Math.cos(angle) *
+            distance +
+            "px"
+        );
 
-            step++;
+        heart.style.setProperty(
+            "--y",
+            Math.sin(angle) *
+            distance +
+            "px"
+        );
 
-            setTimeout(
-                runLoader,
-                700
-            );
+        heart.style.fontSize =
+            (12 + Math.random() * 20) +
+            "px";
 
-        } else {
+        document.body.appendChild(heart);
 
-            setTimeout(
-                function() {
-
-                    loader.style.display =
-                        "none";
-
-                    letter.style.display =
-                        "block";
-
-                    letter.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                },
-                700
-            );
-
-        }
+        setTimeout(() => {
+            heart.remove();
+        }, 2600);
 
     }
 
-    runLoader();
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+function showFinal() {
+
+    hideSections();
+
+    const final =
+        document.getElementById("final");
+
+    final.style.display = "flex";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    setTimeout(() => {
+
+        heartBurst();
+
+    }, 1000);
 
 }
 
 </script>
 
-
 </body>
-
 </html>
